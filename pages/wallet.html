@@ -1,0 +1,206 @@
+
+<style>
+    a.hot_link2 {
+        font-size: 20px;
+        color: white;
+    }
+    a.hot_link2:hover {
+        color: #2ecc71;
+        text-decoration: none;
+    }
+</style>
+
+<div class="container">
+                      <div class="row">
+                        <div class="col-sm-12 col-md-12 col-lg-12">
+                                      <center>
+                                    		</br>
+                                        <h1 class="display-3 d-print-none" id="turtleTitle">Wallets</h1>
+                                      </center>
+                        </div>
+                      </div>
+<!-- H1 -->
+  <div class="row  d-print-none">
+    <div class="col-sm-12 col-md-12 col-lg-12 d-print-none">
+			<center>
+      <h3>Choose an operating system</h3>
+          <button class="btn btn-default" onclick="js:show_apple();" type="button" value="apple">Apple</button>
+          <button class="btn btn-default" onclick="js:show_win();" type="button" value="win">Windows</button>
+          <button class="btn btn-default" onclick="js:show_linux();" type="button" value="linux">Linux</button><br /><br />
+<!-- OS -->
+      <div id="apple" style="display:none;">
+					<button class="btn btn-default" onclick="js:show_applegui();" type="button" value="Generate wallet">GUI</button>
+					<button class="btn btn-default" onclick="js:show_applecli();" type="button" value="Generate wallet">CLI</button>
+      </div>
+       <div id="win" style="display:none;">
+					<button class="btn btn-default" onclick="js:show_wingui();" type="button" value="Generate wallet">GUI</button>
+					<button class="btn btn-default" onclick="js:show_wincli();" type="button" value="Generate wallet">CLI</button>
+      </div>
+      <div id="linux" style="display:none;">
+					<button class="btn btn-default" onclick="js:show_linuxgui();" type="button" value="Generate wallet">GUI</button>
+					<button class="btn btn-default" onclick="js:show_linuxcli();" type="button" value="Generate wallet">CLI</button>
+      </div>
+<!-- GUi/CLI -->
+      </center>
+
+      <div id="applegui" class="col-sm-12 col-md-12 col-lg-12 d-print-none" style="display:none;">
+        <!-- -->
+        <center></br></br>
+        <!-- -->
+        <div class="col-sm-5 col-md-5 col-lg-5"></div>
+          <div class="col-sm-2 col-md-2 col-lg-2">
+            <img src="https://i.imgur.com/fsWTCIA.png" style="width: 100%;height: auto;"> <br><br>
+          </div>
+        <div class="col-sm-5 col-md-5 col-lg-5"></div>
+        <!-- -->
+          <div class="col-sm-12 col-md-12 col-lg-12">
+          <p>Unzip it and move the folder wherever you want or drag the application <strong>BitcoinNova-Nest</strong> into /Applications or any other folder.</p>
+          <p>Launch the application. (If your mac complains that the app comes from an unindentified developer and does not want to open it, just right-click (or ctrl-click) on the app, and choose open > open)</p> <br>
+          <p>The wallets you create or generate will be saved to your home folder. You can keep them there or move them wherever you want.</p>
+          <p>Make sure Bitcoinnova-service or Bitcoinnovad are not running before you start BitcoinNova-Nest.</p>
+          <p>If you encounter crashes, open the activity monitor (in your app > utilities), and force quit walletd (if it is running) before opening a wallet. (this bug is being worked on).</p>
+          <p>The log files will be saved in ~/Library/Application Support/BitcoinNova-Nest/.</p><br><br>
+          <button class="btn btn-default" onclick="window.location.href='https://github.com/BitcoinNova/BitcoinNova-Nest/releases'" type="button" value="Generate wallet">Download</button>
+          </br></br></br>
+          <strong>Screen:</strong> <br><br>
+          <img src="img/MainScreen.png" style="width: 100%;height: auto;"> <br />
+          </div>
+        <!-- -->
+        </center>
+        <!-- -->
+      </div>
+
+      <div id="applecli" class="col-sm-12 col-md-12 col-lg-12 d-print-none" style="display:none;">
+        <!-- -->
+        <center></br></br>
+        <!-- -->
+        <div class="col-sm-5 col-md-5 col-lg-5"></div>
+          <div class="col-sm-2 col-md-2 col-lg-2">
+            <img src="https://i.imgur.com/fsWTCIA.png" style="width: 100%;height: auto;"> <br><br>
+          </div>
+        <div class="col-sm-5 col-md-5 col-lg-5"></div>
+        <!-- -->
+          <div class="col-sm-12 col-md-12 col-lg-12">
+          <p>Run the Bitcoinnovad binary extracted from the Mac binary tarball: <strong>./Bitcoinnovad</strong></p>
+          <p>With Bitcoinnovad still running in the background or another terminal/shell/command prompt, open zedwallet in a new shell: <strong>./zedwallet</strong></p>
+          <p>In case you don't want to download the blockchain and verify it everytime, you can instead use a Remote Node to quickly sync the blockchain. </p>
+          <a class="hot_link2" target="_blank" href="https://github.com/BitcoinNova/bitcoinnova/wiki/Using-remote-nodes"> More info about remote nodes here.</a> <br>
+          <a class="hot_link2" target="_blank" href="https://github.com/BitcoinNova/bitcoinnova/wiki/Using-zedwallet"> More info about zedwallet you can find here!</a><br><br>
+          <button class="btn btn-default" onclick="window.location.href='https://github.com/BitcoinNova/bitcoinnova/releases'" type="button" value="Generate wallet">Download</button>
+          </br></br></br>
+          <strong>Screen:</strong> <br><br>
+          <img src="img/zw.png" style="width: 100%;height: auto;"> <br />
+          </div>
+        <!-- -->
+        </center>
+        <!-- -->
+      </div>
+
+      <div id="wingui" class="col-sm-12 col-md-12 col-lg-12 d-print-none" style="display:none;">
+        <!-- -->
+        <center></br></br>
+        <!-- -->
+        <div class="col-sm-5 col-md-5 col-lg-5"></div>
+          <div class="col-sm-2 col-md-2 col-lg-2">
+            <img src="https://i.imgur.com/fsWTCIA.png" style="width: 100%;height: auto;"> <br><br>
+          </div>
+        <div class="col-sm-5 col-md-5 col-lg-5"></div>
+        <!-- -->
+          <div class="col-sm-12 col-md-12 col-lg-12">
+          <p>Unzip the folder and launch <strong>BitcoinNova-Nest.exe</strong> (Make sure you leave everything as is in the folder)</p> <br>
+          <p>Make sure Bitcoinnova-service.exe or Bitcoinnovad.exe are not running before you start BitcoinNova-Nest</p>
+          <p>When you open a wallet in BitcoinNova Nest, you will see a black empty walletd window. You must keep it open. It will close automatically when you close your wallet.If it does not close automatically a few seconds after you close your wallet, you can close it manually.</p> <br><br>
+          <button class="btn btn-default" onclick="window.location.href='https://github.com/BitcoinNova/BitcoinNova-Nest/releases'" type="button" value="Generate wallet">Download</button>
+          </br></br></br>
+          <strong>Screen:</strong> <br><br>
+          <img src="img/MainScreen.png" style="width: 100%;height: auto;"> <br />
+          </div>
+        <!-- -->
+        </center>
+        <!-- -->
+      </div>
+
+      <div id="wincli" class="col-sm-12 col-md-12 col-lg-12 d-print-none" style="display:none;">
+        <!-- -->
+        <center></br></br>
+        <!-- -->
+        <div class="col-sm-5 col-md-5 col-lg-5"></div>
+          <div class="col-sm-2 col-md-2 col-lg-2">
+            <img src="https://i.imgur.com/fsWTCIA.png" style="width: 100%;height: auto;"> <br><br>
+          </div>
+        <div class="col-sm-5 col-md-5 col-lg-5"></div>
+        <!-- -->
+          <div class="col-sm-12 col-md-12 col-lg-12">
+          <p>Run the Bitcoinnovad.exe executable extracted from the Windows binary zip: <strong>cd Downloads\bitcoinnova-windows</strong> than <strong>Run the zedwallet.exe executable from the extracted folder.</strong></p>
+          <p>With Bitcoinnovad still running in the background or another terminal/shell/command prompt, open zedwallet in a new shell: <strong>./zedwallet</strong></p>
+          <p>In case you don't want to download the blockchain and verify it everytime, you can instead use a Remote Node to quickly sync the blockchain. </p>
+          <a class="hot_link2" target="_blank" href="https://github.com/BitcoinNova/bitcoinnova/wiki/Using-remote-nodes"> More info about remote nodes here.</a> <br>
+          <a class="hot_link2" target="_blank" href="https://github.com/BitcoinNova/bitcoinnova/wiki/Using-zedwallet"> More info about zedwallet you can find here!</a><br><br>
+          <button class="btn btn-default" onclick="window.location.href='https://github.com/BitcoinNova/bitcoinnova/releases'" type="button" value="Generate wallet">Download</button>
+          </br></br></br>
+          <strong>Screen:</strong> <br><br>
+          <img src="img/zw.png" style="width: 100%;height: auto;"> <br />
+          </div>
+        <!-- -->
+        </center>
+        <!-- -->
+      </div>
+
+      <div id="linuxgui" class="col-sm-12 col-md-12 col-lg-12 d-print-none" style="display:none;">
+        <!-- -->
+        <center></br></br>
+        <!-- -->
+        <div class="col-sm-5 col-md-5 col-lg-5"></div>
+          <div class="col-sm-2 col-md-2 col-lg-2">
+            <img src="https://i.imgur.com/fsWTCIA.png" style="width: 100%;height: auto;"> <br><br>
+          </div>
+        <div class="col-sm-5 col-md-5 col-lg-5"></div>
+        <!-- -->
+          <div class="col-sm-12 col-md-12 col-lg-12">
+            <p>extract it <strong>$ tar xvzf BitcoinNova-Nest-x.xx-Linux.tar.gz</strong></p>
+            <p>run BitcoinNova-Nest.sh. (Make sure you leave everything as is in the folder)</p><br>
+            <p>Make sure Bitcoinnova-service or Bitcoinnovad are not running before you start BitcoinNova-Nest</p>
+            <p>If you want the copy address to clipboard button to work, install xclip or xsel on Debian/Ubuntu:<strong>$ sudo apt install xclip</strong></p>
+            <p>If you encounter crashes, open an activity monitor (e.g. $ htop), and quit walletd (if it is running) before opening a wallet. (this bug is being worked on)</p> <br><br>
+          <button class="btn btn-default" onclick="window.location.href='https://github.com/BitcoinNova/BitcoinNova-Nest/releases'" type="button" value="Generate wallet">Download</button>
+          </br></br></br>
+          <strong>Screen:</strong> <br><br>
+          <img src="img/MainScreen.png" style="width: 100%;height: auto;"> <br />
+          </div>
+        <!-- -->
+        </center>
+        <!-- -->
+      </div>
+
+      <div id="linuxcli" class="col-sm-12 col-md-12 col-lg-12 d-print-none" style="display:none;">
+        <!-- -->
+        <center></br></br>
+        <!-- -->
+        <div class="col-sm-5 col-md-5 col-lg-5"></div>
+          <div class="col-sm-2 col-md-2 col-lg-2">
+            <img src="https://i.imgur.com/fsWTCIA.png" style="width: 100%;height: auto;"> <br><br>
+          </div>
+        <div class="col-sm-5 col-md-5 col-lg-5"></div>
+        <!-- -->
+          <div class="col-sm-12 col-md-12 col-lg-12">
+          <p>Run the Bitcoinnovad binary extracted from the Linux binary tarball: <strong>./Bitcoinnovad</strong></p>
+          <p>With Bitcoinnovad still running in the background or another terminal/shell/command prompt, open zedwallet in a new shell: <strong>./zedwallet</strong></p>
+          <p><strong>Using a Remote Node</strong></p>
+          <p>In case you don't want to download the blockchain and verify it everytime, you can instead use a Remote Node to quickly sync the blockchain. </p>
+          <a class="hot_link2" target="_blank" href="https://github.com/BitcoinNova/bitcoinnova/wiki/Using-remote-nodes"> More info about remote nodes here.</a><br>
+          <a class="hot_link2" target="_blank" href="https://github.com/BitcoinNova/bitcoinnova/wiki/Using-zedwallet"> More info about zedwallet you can find here!</a><br><br>
+          <button class="btn btn-default" onclick="window.location.href='https://github.com/BitcoinNova/bitcoinnova/releases'" type="button" value="Generate wallet">Download</button>
+          </br></br></br>
+          <strong>Screen:</strong> <br><br>
+          <img src="img/zw.png" style="width: 100%;height: auto;"> <br />
+          </div>
+        <!-- -->
+        </center>
+        <!-- -->
+      </div>
+
+    </div>
+  </div>
+
+</div>
+<script type="text/javascript" src="/js/wallets.js"></script>

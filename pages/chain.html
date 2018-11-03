@@ -1,0 +1,33 @@
+<div class="col-sm-12 col-md-12 col-lg-12 d-print-none" >
+<center>
+        <br><br>
+    <h2>Latest snap of blockchain is from:</h2> 
+    <input class="btn btn-default" onclick="window.location.href='https://drive.google.com/open?id=1s0Ba8kOC6H78D1yElQ4p4HP1DuPqXxds'" type="button" value="31-10-2018"> <br><br>
+    
+</center>
+<div id="wiki-body" class="wiki-body gollum-markdown-content instapaper_body">
+        <div class="markdown-body">
+          <h1>How to Bootstrap the Bitcoin Nova Blockchain</h1> <p>This guide will help you install a recent copy of the blockchain. This should significantly speed up the task of getting the blockchain synced up so you can use 
+your wallet.</p> <h2>Windows:</h2> <ol> <li> <p>Make sure <code>Bitcoinnovad.exe</code>, <code>Bitcoinnova-service.exe</code>, and/or the GUI wallet are not running.</p> </li> <li> <p>Open File Explorer and type 
+<code>%APPDATA%\bitcoinnova</code> and hit enter.</p> </li> </ol> <p><img src="https://i.imgur.com/KEIeyLE.jpg" alt="file explorer"></p> <p><strong>Note: if the folder doesn't exist, just go to <code>%APPDATA%</code> instead and 
+create a folder named <code>bitcoinnova</code>.</strong></p> <ol start="3"> <li>Delete the following if they exist:</li> </ol> <ul> <li> <p>blockindexes.bin</p> </li> <li> <p>blocks.bin</p> </li> <li> <p>"DB" folder</p> <p>Note: 
+In case it is unable to delete the files due to them being used by some other program, follow these steps:</p> <ul> <li>Open Task Manager with the shortcut <code>Ctrl + Shift+ Escape</code>.</li> <li>Click on 
+<code>Processes</code>.</li> <li>Click on <code>Image Name</code>.</li> <li>Scroll to the bottom.</li> <li>Click on <code>Bitcoinnova-service.exe</code>.</li> <li>Click on <code>End Process</code>.</li> <li>Click on <code>End 
+Process</code> again.</li> <li>Try to delete them again.</li> </ul> <p><img src="https://i.imgur.com/FCjYDzL.png?1" alt="closewallet"></p> <p>​</p> </li> </ul> <ol start="4"> 
+<li> <p><a href="#" rel="nofollow">Download</a> the latest snapshot of the blockchain.</p> </li> <li> <p>Move the two new downloaded files to the 
+<code>%APPDATA%\bitcoinnova</code> folder.</p> </li> <li> <p>Start <code>Bitcoinnovad.exe</code> or the GUI wallet like you normally do.</p> </li> <li> <p>See Expected Results section below.</p> </li> 
+</ol> <h2> Mac &amp; Linux:</h2> <ol> <li> <p>Make sure <code>Bitcoinnovad</code>, <code>Bitcoinnova-service</code>, and/or the GUI wallet are not running.</p> </li> <li> <p>Open <code>Finder</code>.</p> </li> <li> <p>Use the shortcut 
+<code>Command + Shift + G</code> to bring up <code>Go to Folder</code>:</p> </li> </ol> <p><img src="https://i.imgur.com/JGvwcOH.jpg" alt="findergoto.jpg"></p> <ol start="4"> 
+<li>Delete the following if they exist:</li> </ol> <ul> <li> <p>blockindexes.bin</p> </li> <li> <p>blocks.bin</p> </li> <li> <p>"DB" folder</p> </li> </ul> <ol start="5"> <li> <p><a 
+href="#" rel="nofollow">Download</a> the latest snapshot of the blockchain.</p> </li> <li> <p>Move the two new downloaded files, <code>blockindexes.bin</code> and 
+<code>blocks.bin</code> into the <code>~/.bitcoinnova/</code> folder.</p> </li> <li> <p>Start <code>Bitcoinnovad</code> or the GUI like you normally do.</p> </li> <li> <p>See the Expected Results 
+section below.</p> </li> </ol> <h2> Expected Results if Done Correctly  </h2> <p>When you start <code>Bitcoinnovad</code> you should see this. Note that the blocksize (150246) in this 
+example will be a different number:</p> <pre><code>2018-Feb-01 18:43:37.216471 INFO Initializing core... 2018-Feb-01 18:43:37.225492 INFO Importing blocks from blockchain storage 2018-Feb-01 18:43:37.741587 INFO Imported block 
+with index 1000 / 150246 2018-Feb-01 18:43:38.258202 INFO Imported block with index 2000 / 150246 2018-Feb-01 18:43:38.928033 INFO Imported block with index 3000 / 150246 2018-Feb-01 18:43:39.454094 INFO Imported block with index 
+4000 / 150246 2018-Feb-01 18:43:40.142969 INFO Imported block with index 5000 / 150246 2018-Feb-01 18:43:40.830674 INFO Imported block with index 6000 / 150246 </code></pre> <p>After it completes it will start syncing 
+incrementally like so:</p> <pre><code>2018-Feb-01 18:47:48.075930 INFO Imported block with index 150000 / 150246 2018-Feb-01 18:47:48.860470 INFO Core initialized OK 2018-Feb-01 18:47:48.860470 INFO Initializing p2p server... 
+</code></pre> <p>If you are using the GUI wallet, you can instead view the progress by opening <code>Bitcoinnova-service.log</code> and scrolling to the bottom.</p>
+        </div>
+
+    </div>
+</div>

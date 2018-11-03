@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+<url>
+
+    <loc>https://turtle.land/</loc>
+
+    <lastmod>2018-06-24</lastmod>
+
+    <changefreq>weekly</changefreq>
+
+    <priority>1.0</priority>
+
+</url>
+
+<url>
+
+    <loc>https://turtle.land/#check_txn</loc>
+
+    <lastmod>2018-06-24</lastmod>
+
+    <changefreq>weekly</changefreq>
+
+    <priority>1.0</priority>
+
+</url> 
+<url>
+
+    <loc>https://turtle.land/#pools</loc>
+
+    <lastmod>2018-06-24</lastmod>
+
+    <changefreq>weekly</changefreq>
+
+    <priority>1.0</priority>
+
+</url> 
+<url>
+
+    <loc>https://turtle.land/#pw</loc>
+
+    <lastmod>2018-06-24</lastmod>
+
+    <changefreq>weekly</changefreq>
+
+    <priority>1.0</priority>
+
+</url> 
+<url>
+
+    <loc>https://turtle.land/#api</loc>
+
+    <lastmod>2018-06-24</lastmod>
+
+    <changefreq>weekly</changefreq>
+
+    <priority>1.0</priority>
+
+</url> 
+<url>
+
+    <loc>https://turtle.land/#links</loc>
+
+    <lastmod>2018-06-24</lastmod>
+
+    <changefreq>weekly</changefreq>
+
+    <priority>1.0</priority>
+
+</url> 
+<url>
+
+    <loc>https://turtle.land/#wallet</loc>
+
+    <lastmod>2018-06-24</lastmod>
+
+    <changefreq>weekly</changefreq>
+
+    <priority>1.0</priority>
+
+</url> 
+<url>
+
+    <loc>https://turtle.land/#miners</loc>
+
+    <lastmod>2018-06-24</lastmod>
+
+    <changefreq>weekly</changefreq>
+
+    <priority>1.0</priority>
+
+</url> 
+<url>
+
+    <loc>https://turtle.land/#chain</loc>
+
+    <lastmod>2018-06-24</lastmod>
+
+    <changefreq>weekly</changefreq>
+
+    <priority>1.0</priority>
+
+</url> 
+
+</urlset>
+      
