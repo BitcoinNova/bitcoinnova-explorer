@@ -1,39 +1,31 @@
-<h2><i class="fas fa-code-branch" aria-hidden="true"></i>Check Transactions</h2>
-</br>
+<h2><i class="fas fa-code-branch" aria-hidden="true"></i> Check Transactions</h2>
+
 <div class="input-group col-md-6">
     <div class="row">
-        <div class="col-sm-12 col-md-24">
         <label for="transaction_hash">Transaction Hash</label>
-        <input class="form-control" placeholder="64 char transaction id" id="transaction_hash">
-        </div>
+        <input class="form-control" placeholder="64 char transaction id" id="transaction_hash" value="">
     </div>
 
     <div class="row">
-        <div class="col-sm-12 col-md-24">
-        <label for="private_key">Private Key     
-    	    <span>
-		    <div class="radio-inline"><label><input type="radio" name="keyType" value="txn" checked>TXN Key</label></div>
-		    <div class="radio-inline"><label><input type="radio" name="keyType" value="view">View Key</label></div>
-	        </span>
-	    </label>
-            <input class="form-control" placeholder="64 char private view or txn key" id="private_key">
-        </div>
+        <label for="private_key">Private View Key
+	</label>
+    <input class="form-control" placeholder="64 char private view or txn key" id="private_key" value="">
+
+
     </div>
 
     <div class="row">
-            <div class="col-sm-12 col-md-24">
         <label for="public_address">Recipient Public Address</label>
-        <input class="form-control" placeholder="99 char public BTN address" id="public_address">
-    </div>
+        <input class="form-control" placeholder="95 char public BTN address" id="public_address" value="">
 
     </div>
-</br>
+
+    </br>
+
     <div class="row">
-            <div class="col-sm-12 col-md-24">
         <button class="btn btn-default" type="button" id="check_transaction">
-                <i class="fas fa-search"></i>Check Transaction
+            <i class="fas fa-search"></i> Check Transaction
         </button>
-    </div>
     </div>
 </div>
 
@@ -42,8 +34,8 @@
     <table class="table table-hover">
         <thead>
         <tr>
-            <th><i class="fas fa-dollar-sign"></i> Amount</th>
-            <th><i class="fab fa-keycdn"></i> Key</th>
+            <th><i class="fa fa-dollar-sign"></i> Amount</th>
+            <th><i class="fa fa-key"></i> Key</th>
         </tr>
         </thead>
         <tbody id="outputs_rows">
