@@ -17,7 +17,7 @@ var networkStat2 = {
     "btn": [
     	["pool.bitcoinnova.org", "http://pool.bitcoinnova.org:8133"],
         ["superblockchain.con-ip.com/btn", "http://superblockchain.con-ip.com:8133"],
-	    ["btn-new.gonspool.com", "http://btn-new.gonspool.com/api"],
+	["btn-new.gonspool.com", "http://btn-new.gonspool.com/api"],
         ["coinsforhash.com/btcnova", "https://coinsforhash.com:8125"]
     ]
 };
