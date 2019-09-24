@@ -1,6 +1,6 @@
 
 <div class="row">
-    <div class="col-sm-12 col-md-6">
+    <div class="col-sm-12 col-md-6 optimization-resolution">
         <div class="panel panel-default" id="network-stats">
             <div class="panel-heading">
                 <h3 class="panel-title"><i class="fas fa-tasks" aria-hidden="true"></i> Stats</h3>
@@ -83,8 +83,8 @@
                                 <a href="#chain"><i class="fas fa-link" aria-hidden="true"></i>&nbsp;<strong>Blockchain </strong> </a>
                         </p>
                         <p><i class="fas fa-handshake" aria-hidden="true"></i>&nbsp; <strong>Exchanges:</strong>
-                            <a class="hot_link2" target="_blank" href="https://altex.exchange/markets&pair=BTC_BTN"> Altex</a>,
-                            <a class="hot_link2" target="_blank" href="https://maplechange.com/markets/btnbtc"> MapleChange</a>
+                            <a class="hot_link2" target="_blank" href="https://cryptohubexchange.com/market/BTN/BTC/"> CryptoHub Exchange</a>,
+                            <a class="hot_link2" target="_blank" href="https://fcbaccount.com/fcb/exchange/BTN/BTC"> FirstCryptoBank</a>
                         </p>
                     </div>
                 </div>
@@ -528,9 +528,9 @@
                 data: [].concat(Blocks).reverse(),
                 yAxisID: "Height",
                 label: "Height",
-	        pointColor: "#59ADFB",
+	            pointColor: "#59ADFB",
                 borderColor: '#59ADFB',
-	        pointBackgroundColor: "#59ADFB",
+	            pointBackgroundColor: "#59ADFB",
                 borderWidth: 2,
                 pointBorderWidth: 1,
                 pointRadius: 2,
@@ -659,7 +659,7 @@
                     time: {
                         parser: false,
                         unit: 'minute',
-                        unitStepSize: 60,
+                        unitStepSize: 4,
                         round: 'second',
                         displayFormats: {
                             'millisecond': 'SSS [ms]',
