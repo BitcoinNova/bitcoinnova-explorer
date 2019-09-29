@@ -118,6 +118,10 @@ table td {
     padding: 10px 10px;
 }
 
+.nav.col-lg-4.col-md-3.col-sm-12.navbar-right.explorer-search {
+    margin-bottom: -12px;
+}
+
 table {
     font-size: 12px;
 }
@@ -151,6 +155,181 @@ table {
     line-height: 20px;
     float: right;
 }
+
+/* Theme White */
+
+.white-mode-button{
+    top: 10px;
+    left:20px;
+    padding:10px;
+    color: #fff;
+    display:flex;
+}
+
+.switch {
+
+}
+
+.switch-page {
+	position: fixed;
+    top: 20%;
+    right: 0;
+    background: #ffffff;
+    border-left: 2px solid #929292;
+    border-top: 2px solid #929292;
+    border-bottom: 2px solid #929292;
+    border-right: 0px solid #929292;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    padding-left: 8px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 8px;
+    z-index: 9999;
+}
+
+html.white-mode .switch-page {
+	position: fixed;
+    top: 20%;
+    right: 0;
+    background: #000000;
+    border-left: 1px solid #929292;
+    border-top: 1px solid #929292;
+    border-bottom: 1px solid #929292;
+    border-right: 0px solid #929292;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    padding-left: 11px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 11px;
+    z-index: 9999;
+}
+
+.switch-theme::after{
+    font-family: FontAwesome;
+    position: absolute;
+    content: "\f185";
+    font-size: 18px;
+    line-height: 26px;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+  
+}
+
+.switch-theme-page::after{
+    font-family: FontAwesome;
+    content: "\f185";
+    font-size: 25px;
+    text-align: center;
+    color: rgb(0, 0, 0); 
+}
+
+input#white-mode{
+    opacity: 0;
+}
+
+html.white-mode .white-mode-button{
+    top: 10px;
+    left:20px;
+    padding:10px;
+    color:  #fff;
+    display:flex;
+}
+
+html.white-mode input#white-mode{
+    opacity: 0;
+}
+
+html.white-mode .switch-theme::after{
+    font-family: FontAwesome;
+    position: absolute;
+    content: "\f186";
+    font-size: 18px;
+    line-height: 26px;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+  
+}
+
+html.white-mode .switch-theme-page::after{
+    font-family: FontAwesome;
+    content: "\f186";
+    font-size: 25px;
+    text-align: center;
+    color: rgb(255, 255, 255); 
+}
+
+html.white-mode body{
+    background: #f5f5f5;
+    color:#2b2b2b;
+}
+
+html.white-mode .panel {
+    margin-bottom: 20px;
+    background-color: #ffffff;
+    border: 1px solid #8080804d;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+}
+
+html.white-mode .panel-default {
+    border-color: #dddddd;
+}
+
+html.white-mode .panel-default>.panel-heading {
+    color: #555555;
+    background-color: #f5f5f5;
+    border-color: #dddddd;
+}
+
+html.white-mode .table-responsive > .table  {
+    background-color: #ffffff;
+}
+
+html.white-mode .table-hover > tbody > tr:hover  {
+    background-color: #409aaf;
+}
+
+html.white-mode .btn-default {
+    color: #ffffff;
+    background: #409aaf;
+}
+
+html.white-mode span.input-group-addon{
+    color:#ffffff;
+    background: #409aaf;
+}
+
+html.white-mode samp{
+    color:#555555;
+}
+
+html.white-mode a{
+    color:#2b2b2b;
+}
+
+html.white-mode a.hot_link3:hover{
+    color:#409aaf;
+}
+
+html.white-mode h3.panel-title{
+    color:#252525;
+    text-shadow: 0px 0px 0px #252525;
+}
+
+/* The End - Theme White */
+
 @media screen and (max-width:991px) and (min-width:768px) {
 .optimization-resolution {
     margin-top: 60px; 

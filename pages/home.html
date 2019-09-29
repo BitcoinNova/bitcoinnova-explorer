@@ -1,5 +1,6 @@
 
 <div class="row">
+    <br />
     <div class="col-sm-12 col-md-6 optimization-resolution">
         <div class="panel panel-default" id="network-stats">
             <div class="panel-heading">
@@ -33,7 +34,8 @@
                 <input type="button" class="btn btn-default btn-xs pull-right" id="loadMoreBlocks" value="Load more">
                 <h3 class="panel-title"><i class="fas fa-chart-area" aria-hidden="true"></i> Difficulty chart </h3>
             </div>
-            <div class="panel-body-diff chart-wrapper"> 
+            <br /> 
+            <div class="chartjs-size-monitor">
                 <canvas id="difficultyChart" height="210"></canvas>
             </div>
         </div>
@@ -93,12 +95,12 @@
 
 <div class="panel panel-default">
     <div class="panel-heading">
-            <input type="button" class="btn btn-default btn-xs pull-right" onclick="tra()" value="Expand">
+            <input type="button" class="btn btn-default btn-xs pull-right" onclick="tra()" value="Contract">
         <h3 class="panel-title"><i class="fas fa-code-branch" aria-hidden="true"></i> Transaction pool
             <span id="mempool_count" class="badge"></span>           
         </h3>
     </div>
-    <div id="tradiv" class="panel-body" style="display:none;">
+    <div id="tradiv" class="panel-body" style="display:block;">
         <div class="table-responsive">
             <table class="table table-hover" id="mem_pool_table">
                 <thead>
@@ -106,7 +108,7 @@
                         <th width="10%"><i class="fas fa-dollar-sign"></i> Amount</th>
                         <th width="10%"><i class="fab fa-buromobelexperte"></i> Fee</th>
                         <th width="10%"><i class="fas fa-align-left"></i> Size</th>
-                   <!-- <th width="40%"><i class="fas fa-code"></i> Hash</th> -->
+                        <th width="40%"><i class="fa fa-code"></i> Hash</th>
                     </tr>
                 </thead>
                 <tbody id="mem_pool_rows">
@@ -118,13 +120,13 @@
 
 <div class="panel panel-default">
     <div class="panel-heading">
-            <input type="button" class="btn btn-default btn-xs pull-right" onclick="blo()" value="Expand">
+            <input type="button" class="btn btn-default btn-xs pull-right" onclick="blo()" value="Contract">
         <h3 class="panel-title">
             <i class="fas fa-dolly" aria-hidden="true"></i> Recent blocks
              <span id="block-range-wrapper" style="display:none;"><span id="block-range" style="display:none;" >______ - ______  </span></span> 
         </h3>
     </div>
-    <div id="blodiv" class="panel-body" style="display:none;">
+    <div id="blodiv" class="panel-body" style="display:block;">
         <div class="input-group">
             <a id="next-page" href="#" class="btn btn-default input-group-addon disabled"><i class="fa fa-arrow-left" aria-hidden="true"></i> Newer</a>
             <span class="input-group-addon">№</span>
@@ -465,8 +467,6 @@
         var avgHashRate = avgDiff / blockTargetInterval;
 
         updateText('avgDifficulty', getReadableDifficultyString(avgDiff, 0).toString());
-     // updateText('avgHashrate', getReadableHashRateString(avgDiff / blockTargetInterval));
-     // updateText('blockSolveTime', getReadableTime(lastStats.difficulty / avgHashRate)); Add back after timestamp is added to mempool
     }
 
     //  Turtle MemPool Transactions
@@ -500,16 +500,14 @@
                         var fee = transactions[tx].fee;
                         var size = transactions[tx].size;
                         var row = document.createElement('tr');
-                        var timestamp = Date().now; // this is not yet part of the json that gets returned in f_transactions_pool_json, leave for now
+                        var timestamp = Date().now;
                         var columns =
-                           /* '<td>' + formatDate(timestamp) + ' (<span class="mtx-ago"></span>)' + '</td>' +*/
                             '<td>' + getReadableCoins(amount, 4, true) + '</td>' +
                             '<td>' + getReadableCoins(fee, 4, true) + '</td>' +
                             '<td>' + localizeNumber(size) + '</td>' +
                             '<td>' + formatPaymentLink(hash) + '</td>';
                         row.innerHTML = columns;
                         $(txsRows).append(row);
-                       // $(row).find('.mtx-ago').timeago('update', new Date(timestamp * 1000).toISOString()); We can re-enable this after a timestamp is added to the mem_pool json
                     }
                 }
                 updateText('mempool_count', document.querySelectorAll('#mem_pool_rows tr').length);
@@ -522,24 +520,44 @@
     function displayDiffChart() {
         var ctx = document.getElementById("difficultyChart");
         var chartData = {
-            //labels: [].concat(Blocks).reverse(),
             labels: [].concat(formatDate(Timestamps)).reverse(),
             datasets: [{
-                data: [].concat(Blocks).reverse(),
-                yAxisID: "Height",
-                label: "Height",
-	            pointColor: "#59ADFB",
-                borderColor: '#59ADFB',
-	            pointBackgroundColor: "#59ADFB",
+                data: [].concat(Txses).reverse(),
+                yAxisID: "Transactions",
+                label: "Txs",
+                backgroundColor: "rgba(255, 67, 0, 0.64)",
+                borderColor: 'rgba(255, 67, 0, 0.64)',
                 borderWidth: 2,
+                pointColor: "rgba(255, 67, 0, 0.64)",
+                pointBorderColor: "rgba(255, 67, 0, 0.64)",
+                pointHighlightFill: "rgba(255, 67, 0, 0.64)",
+                pointBackgroundColor: "rgba(255, 67, 0, 0.64)",
                 pointBorderWidth: 1,
-                pointRadius: 2,
-                pointHoverRadius: 1,
-                pointHitRadius: 20
-            }, {
+                pointRadius: 0,
+                pointHoverRadius: 0,
+                pointHitRadius: 0,
+                type: 'bar'
+            },{
+                data: [].concat(Sizes).reverse(),
+                yAxisID: "Sizes",
+                label: "Size",
+                backgroundColor: "rgba(229, 211, 0, 0.6)",
+                borderColor: 'rgba(229, 211, 0, 0.6)',
+                borderWidth: 2,
+                pointColor: "rgba(229, 211, 0, 0.6)",
+                pointBorderColor: "rgba(229, 211, 0, 0.6)",
+                pointHighlightFill: "rgba(229, 211, 0, 0.6)",
+                pointBackgroundColor: "rgba(229, 211, 0, 0.6)",
+                pointBorderWidth: 2,
+				pointRadius: 1,
+				pointHoverRadius: 3,
+				pointHitRadius: 20,
+                type: 'bar'
+            },{
                 data: [].concat(Difficulties).reverse(),
                 yAxisID: "Difficulty",
                 label: "Diff",
+                backgroundColor: "rgba(41, 183, 101, 0.41)",
                 borderColor: '#2ecc71',
                 borderWidth: 2,
                 pointColor: "#2ecc71",
@@ -547,30 +565,24 @@
                 pointHighlightFill: "#2ecc71",
                 pointBackgroundColor: "#2ecc71",
                 pointBorderWidth: 1,
-                pointRadius: 2,
-                pointHoverRadius: 1,
-                pointHitRadius: 20
+                pointRadius: 0,
+                pointHoverRadius: 0,
+                pointHitRadius: 0,
+                type: 'line'
             },{
-                data: [].concat(Txses).reverse(),
-                yAxisID: "Transactions",
-                label: "Txs",
-                backgroundColor: "rgba(0,0,0,0)",
-                borderColor: 'rgba(0,0,0,0)',
-                borderWidth: 0,
+                data: [].concat(Blocks).reverse(),
+                yAxisID: "Height",
+                label: "Height",
+                backgroundColor: "rgba(76, 165, 253, 0.48)",
+	            pointColor: "rgba(76, 165, 253, 0.78)",
+                borderColor: 'rgba(76, 165, 253, 0.78)',
+	            pointBackgroundColor: "rgba(76, 165, 253, 0.78)",
+                borderWidth: 2,
                 pointBorderWidth: 0,
                 pointRadius: 0,
                 pointHoverRadius: 0,
                 pointHitRadius: 0,
-            }, {
-                data: [].concat(Sizes).reverse(),
-                yAxisID: "Sizes",
-                label: "Size",
-                borderWidth: 2,
-                pointColor: "#2ecc71",
-                pointBorderWidth: 1,
-                pointRadius: 2,
-                pointHoverRadius: 1,
-                pointHitRadius: 20
+                type: 'line'
             }]
         };
 
@@ -590,6 +602,24 @@
             },
             scales: {
                 yAxes: [{
+                    id: 'Difficulty',
+                    type: 'linear',
+                    position: 'left',
+                    scaleLabel: {
+                        display: false,
+                        labelString: 'Difficulty'
+                    },
+                    gridLines: {
+                        display: true
+                    },
+                    ticks: {
+                        fontSize: 11,
+                        display: true,
+                        fontColor: "#a7a7a7"
+                        
+                    },
+                    display: true
+                }, {
                     id: 'Height',
                     type: 'linear',
                     position: 'left',
@@ -601,26 +631,11 @@
                         display: false
                     },
                     ticks: {
-                        fontSize: 9,
-                        display: false
-                    },
-                    display: false
-                }, {
-                    id: 'Difficulty',
-                    type: 'linear',
-                    position: 'left',
-                    scaleLabel: {
+                        fontSize: 10,
                         display: false,
-                        labelString: 'Difficulty'
+                        fontColor: "#a7a7a7"
                     },
-                    gridLines: {
-                        display: false
-                    },
-                    ticks: {
-                        fontSize: 9,
-                        display: false
-                    },
-                    display: false
+                    display: true
                 }, {
                     id: 'Transactions',
                     type: 'linear',
@@ -633,10 +648,11 @@
                         display: false
                     },
                     ticks: {
-                        fontSize: 9,
-                        display: false
+                        fontSize: 11,
+                        display: true,
+                        fontColor: "#a7a7a7"
                     },
-                    display: false
+                    display: true
                 }, {
                     id: 'Sizes',
                     type: 'linear',
@@ -649,17 +665,24 @@
                         display: false
                     },
                     ticks: {
-                        fontSize: 9,
-                        display: false
+                        fontSize: 11,
+                        display: true,
+                        fontColor: "#a7a7a7"
                     },
-                    display: false
+                    display: true
                 }],
                 xAxes: [{
                     type: "time",
+                    stacked: true,
+				    type: "time",
+				    categoryPercentage: 0,
+				    barPercentage: 1,
+				    categorySpacing: 0,
+				    barThickness: 4,
                     time: {
                         parser: false,
                         unit: 'minute',
-                        unitStepSize: 4,
+                        unitStepSize: 2,
                         round: 'second',
                         displayFormats: {
                             'millisecond': 'SSS [ms]',
@@ -678,54 +701,24 @@
                     },
                     ticks: {
                         fontSize: 9,
-                        fontColor: "#CCC",
+                        fontColor: "#a7a7a7",
                         autoSkip: true,
-                        //maxRotation: 90,
-                        //minRotation: 90
-                        //display:false
                     }
-                    //display: false
                 }]
             },
             tooltips: {
                 mode: 'index',
-                //displayColors: false,
                 callbacks: {
                     title: function(tooltipItem, data) {
                         var height = data.datasets[3].data[tooltipItem[0].index];
                         var time = new Date(data.labels[tooltipItem[0].index]).toLocaleString();
-                        //return 'Блок №: ' + height + ' - ' + time + '';
                         return time + '';
                     },
-                    /*
-                    label: function(tooltipItem, data) {
-                        var diff        = data.datasets[0].data[tooltipItem.index];
-                        var txcount = data.datasets[1].data[tooltipItem.index];
-                        var size        = data.datasets[2].data[tooltipItem.index];
-
-                        var diff_swatch_color = data.datasets[0].borderColor;
-
-                        console.log(diff_swatch_color);
-
-                        var diff_swatch = '<span style="color="'+ diff_swatch_color +'">&bullet;</span>';
-
-                        var multistringText = [];
-
-                        var str1 = diff_swatch + 'Складність: ' + diff + '';
-                        var str2 = 'Розмір: ' + size + '';
-                        var str3 = 'Транзакції: ' + txcount + '';
-
-                        multistringText.push(str1);
-                        multistringText.push(str2);
-                        multistringText.push(str3);
-
-                        return multistringText;
-                    }*/
                 }
             }
         };
         diffChart = new Chart(ctx, {
-            type: 'line',
+            type: 'bar',
             data: chartData,
             options: options
         });
@@ -741,42 +734,38 @@
             txsnr = [];
         for (var i = 0; i < brows.length; i++) {
             var row = $(brows[i]);
-            var label = parseInt(row.find('td:first').text().replace(/,/g,""));
-            var diff = parseInt(row.find('td.blk-diff').text().replace(/,/g,""));
             var txses = parseInt(row.find('td:nth-child(5)').text().replace(/,/g,""));
             var size = parseInt(row.find('td:nth-child(2)').text().replace(/,/g,""));
+            var diff = parseInt(row.find('td.blk-diff').text().replace(/,/g,""));
+            var label = parseInt(row.find('td:first').text().replace(/,/g,""));
+            
             var time = row.attr('data-dt');
 
-            labels.push(label);
-            diffs.push(diff);
             txsnr.push(txses);
             sizes.push(size);
+            diffs.push(diff);
+            labels.push(label); 
             times.push(time);
         }
-        //diffChart.data.labels = labels.reverse();
         if (diffChart) {
             diffChart.data.labels = times.reverse();
-            diffChart.data.datasets[0].data = labels.reverse();
-            diffChart.data.datasets[1].data = diffs.reverse();
-            diffChart.data.datasets[2].data = txsnr.reverse();
-            diffChart.data.datasets[3].data = sizes.reverse();
+            diffChart.data.datasets[0].data = txsnr.reverse();
+            diffChart.data.datasets[1].data = sizes.reverse();
+            diffChart.data.datasets[2].data = diffs.reverse();
+            diffChart.data.datasets[3].data = labels.reverse();
             diffChart.update();
         }
     }
 
     function loadMoreChart() {
-        // diffChart.data.labels = [].concat(Blocks).reverse();
         diffChart.data.labels = [].concat(Timestamps).reverse();
-        diffChart.data.datasets[0].data = [].concat(Blocks).reverse();
-        diffChart.data.datasets[1].data = [].concat(Difficulties).reverse();
-        diffChart.data.datasets[2].data = [].concat(Txses).reverse();
-        diffChart.data.datasets[3].data = [].concat(Sizes).reverse();
+        diffChart.data.datasets[0].data = [].concat(Txses).reverse();
+        diffChart.data.datasets[1].data = [].concat(Sizes).reverse();
+        diffChart.data.datasets[2].data = [].concat(Difficulties).reverse();
+        diffChart.data.datasets[3].data = [].concat(Blocks).reverse();
         diffChart.update();
     }
 
-/*     $(function() {
-        $('[data-toggle="tooltip"]').tooltip();
-    }); */
 
     function getReadableTime(seconds) {
 
