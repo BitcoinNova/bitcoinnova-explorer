@@ -10,21 +10,15 @@
 	<META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 	<link rel="shortcut icon" href="favicon.ico">
 	<link rel="icon" type="image/icon" href="favicon.ico" >
-	<link href="css/bootstrap.css" rel="stylesheet" id="theme_link" type='text/css'>
 	<link href="css/style.css" rel="stylesheet" id="theme_link" type='text/css'>
+	<link href="css/bootstrap.css" rel="stylesheet" id="theme_link" type='text/css'>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
 	<title>Bitcoin Nova [BTN] Block Explorer - Pools,Markets,Stats,Links</title>
-<!--  	<script  src="./js/jq/jquery.js"></script>
-	<script  src="./js/jq/jquery.sparkline.js"></script>
-	<script  src="./js/jq/jquery.timeago.js"></script>
-	<script  src="./js/jq/popper.js"></script>
-	<script src="./js/jq/tooltip.js"></script>
-	<script  src="./js/jq/underscore.js"></script>
-	<script  src="js/Chart.bundle.js"></script>
-	<script  src="js/font-awesome.js"></script>  -->
+
 	<script src="./js/compressed.js"></script>
 	<script src="./config.js"></script>
 	<script src="./js/main.js"></script>
-	<script src="./js/jq/bootstrap.js"></script>  
+	<script src="./js/jq/bootstrap.js"></script> 
 </head>
 <body>
 <div id="nav" class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -64,7 +58,14 @@
 			<li style="display:none;"><a class="hot_link" data-page="blockchain_block.html" href="#blockchain_block"><i class="fa fa-cubes"></i> Block</a></li>
 			<li style="display:none;"><a class="hot_link" data-page="blockchain_transaction.html" href="#blockchain_transaction"><i class="fa fa-cubes"></i> Transaction</a></li>
 			<li style="display:none;"><a class="hot_link" data-page="blockchain_payment_id.html" href="#blockchain_payment_id"><i class="fa fa-cubes"></i> Transactions by Payment ID</a></li>
-			<li><a  style="display:none;" class="hot_link" data-page="support.html" href="#support"><i class="fa fa-comments"></i> Help</a></li>
+			<li><a style="display:none;" class="hot_link" data-page="support.html" href="#support"><i class="fa fa-comments"></i> Help</a></li>
+			<li>
+				<label for="white-mode" class="white-mode-button">
+					<div class="switch"><div class="switch-theme"></div></div>
+					<input id="white-mode" type="checkbox" onclick="document.documentElement.classList.toggle('white-mode')">
+				</label>
+			</li>
+
 		</ul>
 	<div class="nav col-lg-4 col-md-3 col-sm-12 navbar-right explorer-search">
 	<div class="input-group">
@@ -216,13 +217,15 @@ var block, xhrGetSearchBlockbyHeight;
 				$('#btn_search').click();
 	});
 </script>
-
-<div id="content">
+<div id="content">	
 <div class="container">
 	<div id="page"></div>
 		<p id="loading" class="text-center"><i class="fas fa-circle-notch fa-spin"></i></p>
-
 </div>
+<label for="white-mode" class="white-mode-button">
+	<div class="switch-page"><div class="switch-theme-page"></div></div>
+	<input id="white-mode" type="checkbox" onclick="document.documentElement.classList.toggle('white-mode')">
+</label>
 </div>
 <footer>
 <div class="container">

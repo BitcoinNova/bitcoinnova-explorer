@@ -4,9 +4,9 @@ xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitem
 
 <url>
 
-    <loc>https://turtle.land/</loc>
+    <loc>http://explorer.bitcoinnova.org/</loc>
 
-    <lastmod>2018-06-24</lastmod>
+    <lastmod>2019-06-24</lastmod>
 
     <changefreq>weekly</changefreq>
 
@@ -16,20 +16,9 @@ xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitem
 
 <url>
 
-    <loc>https://turtle.land/#check_txn</loc>
+    <loc>http://explorer.bitcoinnova.org/#check_txn</loc>
 
-    <lastmod>2018-06-24</lastmod>
-
-    <changefreq>weekly</changefreq>
-
-    <priority>1.0</priority>
-
-</url> 
-<url>
-
-    <loc>https://turtle.land/#pools</loc>
-
-    <lastmod>2018-06-24</lastmod>
+    <lastmod>2019-06-24</lastmod>
 
     <changefreq>weekly</changefreq>
 
@@ -38,20 +27,9 @@ xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitem
 </url> 
 <url>
 
-    <loc>https://turtle.land/#pw</loc>
+    <loc>http://explorer.bitcoinnova.org/#pools</loc>
 
-    <lastmod>2018-06-24</lastmod>
-
-    <changefreq>weekly</changefreq>
-
-    <priority>1.0</priority>
-
-</url> 
-<url>
-
-    <loc>https://turtle.land/#api</loc>
-
-    <lastmod>2018-06-24</lastmod>
+    <lastmod>2019-06-24</lastmod>
 
     <changefreq>weekly</changefreq>
 
@@ -60,20 +38,9 @@ xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitem
 </url> 
 <url>
 
-    <loc>https://turtle.land/#links</loc>
+    <loc>http://explorer.bitcoinnova.org/#pw</loc>
 
-    <lastmod>2018-06-24</lastmod>
-
-    <changefreq>weekly</changefreq>
-
-    <priority>1.0</priority>
-
-</url> 
-<url>
-
-    <loc>https://turtle.land/#wallet</loc>
-
-    <lastmod>2018-06-24</lastmod>
+    <lastmod>2019-06-24</lastmod>
 
     <changefreq>weekly</changefreq>
 
@@ -82,9 +49,9 @@ xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitem
 </url> 
 <url>
 
-    <loc>https://turtle.land/#miners</loc>
+    <loc>http://explorer.bitcoinnova.org/#api</loc>
 
-    <lastmod>2018-06-24</lastmod>
+    <lastmod>2019-06-24</lastmod>
 
     <changefreq>weekly</changefreq>
 
@@ -93,9 +60,42 @@ xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitem
 </url> 
 <url>
 
-    <loc>https://turtle.land/#chain</loc>
+    <loc>http://explorer.bitcoinnova.org/#links</loc>
 
-    <lastmod>2018-06-24</lastmod>
+    <lastmod>2019-06-24</lastmod>
+
+    <changefreq>weekly</changefreq>
+
+    <priority>1.0</priority>
+
+</url> 
+<url>
+
+    <loc>http://explorer.bitcoinnova.org/#wallet</loc>
+
+    <lastmod>2019-06-24</lastmod>
+
+    <changefreq>weekly</changefreq>
+
+    <priority>1.0</priority>
+
+</url> 
+<url>
+
+    <loc>http://explorer.bitcoinnova.org/#miners</loc>
+
+    <lastmod>2019-06-24</lastmod>
+
+    <changefreq>weekly</changefreq>
+
+    <priority>1.0</priority>
+
+</url> 
+<url>
+
+    <loc>http://explorer.bitcoinnova.org/#chain</loc>
+
+    <lastmod>2019-06-24</lastmod>
 
     <changefreq>weekly</changefreq>
 

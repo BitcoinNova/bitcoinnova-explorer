@@ -107,16 +107,17 @@ var displayChart = function displayChart() {
             title: {
                 display: true,
                 text: 'Pools Hashrate',
-                fontSize: 18,
-                fontColor: '#fff'
+                fontSize: 22,
+                fontColor: '#409aaf',
             },
             legend: {
                 display: false,
+                position: 'bottom',
             },
             layout: {
                 padding: {
                     left: 0,
-                    right: 0
+                    right: 0,
                 },
             },
             tooltips: {
