@@ -30,46 +30,95 @@
 
     <div class="row">
         <div class="col-sm-12 col-md-12 col-lg-12">
-            <h3>XMR-Stak</h3>
-            <h4>is a universal Stratum pool miner. This miner supports CPUs, AMD and NVIDIA gpus and can be used to mine the crypto currency Monero and Aeon.</h4>
-            <button class="btn btn-default" onclick="xmrconf()" type="button" value="xmr">Configuration</button>
-            <button class="btn btn-default" onclick="window.open('https://github.com/fireice-uk/xmr-stak/releases','_blank')" type="button" value="Download">Download</button>
+            <h3>BitcoinNova Miner</h3>
+            <h4>A CPU and NVIDIA miner for BitcoinNova / Chukwa / ChukwaV2.</h4>
+            <button class="btn btn-default" onclick="bitcoinnovaminerconf()" type="button" value="bitcoinnova-miner">Configuration</button>
+            <button class="btn btn-default" onclick="window.open('https://github.com/BitcoinNova/bitcoinnova-miner/releases','_blank')" type="button" value="Download">Download</button>
         </div>
-        <div id="xmrconfdiv" class="col-sm-12 col-md-12 col-lg-12 d-print-none" style="display:none;">
+        <div id="bitcoinnovaminerconfdiv" class="col-sm-12 col-md-12 col-lg-12 d-print-none" style="display:none;">
+          <h3>Basic example BitcoinNova Miner</h3>
+          <pre><code>./bitcoinnova-miner --algorithm bitcoinnova --pool pool.bitcoinnova.org:4444 --username ECVVceHwZQaNg7BNuAjJXhbQFJnLcmxyxJ7CXNBnb2M5YUsVMKaAD8ceNHiGSqdS7hJWKLEC38kFeWU6F5dVpLm2QPcLWdj</code></pre>
           <br>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/YNMa8NplWus" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-            <br>
-              <h2>Features</h2>
-              <ul>
-              <li>support all common backends (CPU/x86, AMD-GPU and NVIDIA-GPU)</li>
-              <li>support all common OS (Linux, Windows and macOS)</li>
-              <li>supports algorithm cryptonight for Monero (XMR) and cryptonight-light (AEON)</li>
-              <li>easy to use
-              <ul>
-              <li>guided start (no need to edit a config file for the first start)</li>
-              <li>auto configuration for each backend</li>
-              </ul>
-              </li>
-              <li>open source software (GPLv3)</li>
-              <li>TLS support</li>
-              <li>HTML statistics</li>
-              <li>JSON API for monitoring</li>
-              </ul>
+          <h3>Copy the below config to <code>config.json</code> and modify to your purposes.</h3>
+          <pre><code>  
+            {
+                "hardwareConfiguration": {
+                    "cpu": {
+                        "enabled": true,
+                        "optimizationMethod": "Auto",
+                        "threadCount": 4
+                    },
+                    "nvidia": {
+                        "devices": [
+                            {
+                                "desktopLag": 100.0,
+                                "enabled": true,
+                                "id": 0,
+                                "intensity": 60.0,
+                                "name": "GeForce GTX 1070"
+                            }
+                        ]
+                    }
+                },
+                "pools": [
+                    {
+                        "agent": "",
+                        "algorithm": "bitcoinnova",
+                        "host": "pool.bitcoinnova.org",
+                        "niceHash": false,
+                        "password": "x",
+                        "port": 4444,
+                        "priority": 0,
+                        "rigID": "",
+                        "ssl": false,
+                        "username": "ECVVceHwZQaNg7BNuAjJXhbQFJnLcmxyxJ7CXNBnb2M5YUsVMKaAD8ceNHiGSqdS7hJWKLEC38kFeWU6F5dVpLm2QPcLWdj"
+                    },
+                    {
+                        "agent": "",
+                        "algorithm": "bitcoinnova",
+                        "host": "pool.bitcoinnova.org",
+                        "niceHash": false,
+                        "password": "x",
+                        "port": 5555,
+                        "priority": 2,
+                        "rigID": "",
+                        "ssl": false,
+                        "username": "ECVVceHwZQaNg7BNuAjJXhbQFJnLcmxyxJ7CXNBnb2M5YUsVMKaAD8ceNHiGSqdS7hJWKLEC38kFeWU6F5dVpLm2QPcLWdj"
+                    }
+                ]
+            }
+          </code></pre>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+            <h3>SRBMiner-MULTI</h3>
+            <h4>SRBMiner-MULTI AMD & NVIDIA & INTEL & CPU cryptocurrency miner.</h4>
+            <button class="btn btn-default" onclick="SRBMinerconf()" type="button" value="SRBMiner">Configuration</button>
+            <button class="btn btn-default" onclick="window.open('https://github.com/doktor83/SRBMiner-Multi/releases','_blank')" type="button" value="Download">Download</button>
+        </div>
+        <div id="SRBMinerconfdiv" class="col-sm-12 col-md-12 col-lg-12 d-print-none" style="display:none;">
+          <h3>Basic example SRBMiner-MULTI:</h3>
+          <pre><code>SRBMiner-MULTI.exe --algorithm argon2id_chukwa --pool pool.bitcoinnova.org:4444 --wallet ECVVceHwZQaNg7BNuAjJXhbQFJnLcmxyxJ7CXNBnb2M5YUsVMKaAD8ceNHiGSqdS7hJWKLEC38kFeWU6F5dVpLm2QPcLWdj --gpu-boost 3</code></pre>
+          <br>  
         </div>
     </div>
 
     <div class="row">
         <div class="col-sm-12 col-md-12 col-lg-12">
             <h3>XMRig</h3>
-            <h4> is a high performance Monero (XMR) CPU miner, with official support for Windows. Originally based on cpuminer-multi with heavy optimizations/rewrites and removing a lot of legacy code, since version 1.0.0 completely rewritten from scratch on C++.</h4>
+            <h4> Is a high performance Monero (XMR) CPU miner, with official support for Windows. Originally based on cpuminer-multi with heavy optimizations/rewrites and removing a lot of legacy code, since version 1.0.0 completely rewritten from scratch on C++.</h4>
             <button class="btn btn-default" onclick="xmrigconf()" type="button" value="xmrig">Configuration</button>
             <button class="btn btn-default" onclick="window.open('https://github.com/xmrig/xmrig/releases','_blank')" type="button" value="Download">Download</button>
         </div>
         <div id="xmrigconfdiv" class="col-sm-12 col-md-12 col-lg-12 d-print-none" style="display:none;">
+          <h3>Basic example XMRig:</h3>
+          <pre><code>xmrig.exe -a argon2/chukwa -o pool.bitcoinnova.org:4444 -u ECVVceHwZQaNg7BNuAjJXhbQFJnLcmxyxJ7CXNBnb2M5YUsVMKaAD8ceNHiGSqdS7hJWKLEC38kFeWU6F5dVpLm2QPcLWdj -p x</code></pre>
           <br>
           <h3>Command line options</h3>
           <pre><code>  
-            -a, --algo=ALGO              cryptonight (default) or cryptonight-lite
+            -a, --algo=ALGO              cryptonight, cryptonight-lite...
             -o, --url=URL                URL of mining server
             -u, --user=USERNAME          username for mining server
             -p, --pass=PASSWORD          password for mining server
@@ -93,17 +142,29 @@
 
     <div class="row">
         <div class="col-sm-12 col-md-12 col-lg-12">
+            <h3>Team Red Miner</h3>
+            <h4>AMD GPU Optimized Cryptocurrency Miner.</h4>
+            <button class="btn btn-default" onclick="teamredminerconf()" type="button" value="teamredminer">Configuration</button>
+            <button class="btn btn-default" onclick="window.open('https://github.com/todxx/teamredminer/releases','_blank')" type="button" value="Download">Download</button>
+        </div>
+        <div id="teamredminerconfdiv" class="col-sm-12 col-md-12 col-lg-12 d-print-none" style="display:none;">
+          <h3>Basic example Team Red Miner:</h3>
+          <pre><code>teamredminer.exe -a trtl_chukwa -o stratum+tcp://pool.bitcoinnova.org:4444 -u ECVVceHwZQaNg7BNuAjJXhbQFJnLcmxyxJ7CXNBnb2M5YUsVMKaAD8ceNHiGSqdS7hJWKLEC38kFeWU6F5dVpLm2QPcLWdj -p x</code></pre>
+          <br>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12">
             <h3>XMRigCC</h3>
-            <h4>is a fork of XMRig which adds the ability to remote control your XMRig instances via a Webfrontend and REST api. This fork is based on XMRig and adds a "Command and Control" (C&C) server, a daemon to reload XMRigCCMiner on config changes and modifications in XMRig to send the current status to the C&C Server. The modified version can also handle commands like "update config", "start/stop mining" or "restart/shutdown" which can be send from the C&C-Server.</h4>
+            <h4>Is a fork of XMRig which adds the ability to remote control your XMRig instances via a Webfrontend and REST api. This fork is based on XMRig and adds a "Command and Control" (C&C) server, a daemon to reload XMRigCCMiner on config changes and modifications in XMRig to send the current status to the C&C Server. The modified version can also handle commands like "update config", "start/stop mining" or "restart/shutdown" which can be send from the C&C-Server.</h4>
             <button class="btn btn-default" onclick="xrigccconf()" type="button" value="xrig">Configuration</button>
             <button class="btn btn-default" onclick="window.open('https://github.com/Bendr0id/xmrigCC/releases','_blank')" type="button" value="Download">Download</button>
         </div>
         <div id="xrigccconfdiv" class="col-sm-12 col-md-12 col-lg-12 d-print-none" style="display:none;">
           <br>
             <h3>Basic example xmrigCCServer:</h3>
-            <pre><code>
-                xmrigCCServer --cc-port=3344 --cc-user=admin --cc-pass=pass --cc-access-token=SECRET_TOKEN_TO_ACCESS_CC_SERVER
-            </code></pre>
+            <pre><code>xmrigCCServer --cc-port=3344 --cc-user=admin --cc-pass=pass --cc-access-token=SECRET_TOKEN_TO_ACCESS_CC_SERVER</code></pre>
             <h3>Options xmrigCCServer</h3>
             <pre><code>
                 Options xmrigCCServer
@@ -125,9 +186,7 @@
             -V, --version                         output version information and exit
             </code></pre>
             <h3>Basic example xmrigDaemon</h3>
-            <pre><code>
-                xmrigCCServer --cc-port=3344 --cc-user=admin --cc-pass=pass --cc-access-token=SECRET_TOKEN_TO_ACCESS_CC_SERVER
-            </code></pre>
+            <pre><code>xmrigCCServer --cc-port=3344 --cc-user=admin --cc-pass=pass --cc-access-token=SECRET_TOKEN_TO_ACCESS_CC_SERVER</code></pre>
             <h3>Options xmrigDaemon</h3>
             <pre><code>
                     -a, --algo=ALGO                       cryptonight (default), cryptonight-lite or cryptonight-heavy
@@ -169,12 +228,8 @@
                     -h, --help                            display this help and exit
                     -V, --version                         output version information and exit
             </code></pre>
-
-
         </div>
     </div>
 </div>
-
-
 </div>
-<script type="text/javascript" src="/js/miners.js"></script>
+<script type="text/javascript" src="./js/miners.js"></script>

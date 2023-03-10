@@ -1,18 +1,18 @@
-function castconf() {
-    var x = document.getElementById("castconfdiv");
-    if (x.style.display === "none") {
-        x.style.display = "block";
+function bitcoinnovaminerconf() {
+    var y = document.getElementById("bitcoinnovaminerconfdiv");
+    if (y.style.display === "none") {
+        y.style.display = "block";
     } else {
-        x.style.display = "none";
+        y.style.display = "none";
     }
 }
 
-function xmrconf() {
-    var z = document.getElementById("xmrconfdiv");
-    if (z.style.display === "none") {
-        z.style.display = "block";
+function SRBMinerconf() {
+    var y = document.getElementById("SRBMinerconfdiv");
+    if (y.style.display === "none") {
+        y.style.display = "block";
     } else {
-        z.style.display = "none";
+        y.style.display = "none";
     }
 }
 
@@ -25,8 +25,8 @@ function xmrigconf() {
     }
 }
 
-function xrigconf() {
-    var y = document.getElementById("xrigconfdiv");
+function teamredminerconf() {
+    var y = document.getElementById("teamredminerconfdiv");
     if (y.style.display === "none") {
         y.style.display = "block";
     } else {
