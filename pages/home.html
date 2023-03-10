@@ -55,39 +55,20 @@
     <div class="panel-body">
             <div class="row">
                     <div class="col-lg-6 col-md-12 col-sm-12">
-                        <p>
-                                <a href="http://bitcoinnova.org/" target="_blank"><i class="fab fa-angellist" aria-hidden="true"></i>&nbsp; <strong>Bitcoin Nova WebSite</strong> </a>
-                        </p>
-                        <p>
-                            <a href="https://github.com/BitcoinNova" target="_blank"><i class="fab fa-github-square" aria-hidden="true"></i>&nbsp;<strong>Bitcoin Nova Github </strong> </a>
-                        </p>
-                        <p>
-                                <a href="https://discord.gg/8zQf7PD" target="_blank"><i class="fab fa-discord" aria-hidden="true"></i>&nbsp;<strong> Bitcoin Nova Discord </strong> </a>
-                        </p>
-                        <p>
-                                <a href="https://medium.com/@bitcoinnova" target="_blank"><i class="fab fa-medium-m" aria-hidden="true"></i>&nbsp;<strong>Bitcoin Nova Medium </strong> </a>
-                        </p>
-                        <p>
-                            <a href="http://nodes.bitcoinnova.org/" target="_blank"><i class="fas fa-server" aria-hidden="true"></i>&nbsp;<strong>Bitcoin Nova Nodes </strong> </a>
-                         </p>
+                        <p><a href="http://bitcoinnova.org/" target="_blank"><i class="fab fas fa-globe" aria-hidden="true"></i>&nbsp;<strong>Bitcoin Nova WebSite</strong></a></p>
+                        <p><a href="#wallet" target="_blank"><i class="fa fa-dollar-sign" aria-hidden="true"></i>&nbsp;<strong>Wallets</strong></a></p>
+                        <p><a href="#miners"><i class="fas fa-toolbox" aria-hidden="true"></i>&nbsp;<strong>Miners</strong></a></p>
+                        <p><a href="#chain"><i class="fas fa-link" aria-hidden="true"></i>&nbsp;<strong>Blockchain</strong></a></p>
+                        <p><a href="http://nodes.bitcoinnova.org/" target="_blank"><i class="fas fa-server" aria-hidden="true"></i>&nbsp;<strong>Bitcoin Nova Nodes</strong> </a></p>
+                        <p><a href="https://coinpaprika.com/coin/btn-bitcoin-nova/#!exchanges"><i class="fas fa-handshake" aria-hidden="true"></i>&nbsp;<strong>Exchanges</strong></a></p>
                     </div>
                     <div class="col-lg-6 col-md-12 col-sm-12">
-                        <p>
-                                <a href="http://faucet.bitcoinnova.org/" target="_blank"><i class="fas fa-coins" aria-hidden="true"></i>&nbsp;<strong> Free Bitcoin Nova </strong> </a>
-                        </p>
-                        <p>
-                                <a href="#wallet"><i class="fas fa-wallet" aria-hidden="true"></i>&nbsp;<strong> Wallets </strong> </a>
-                        </p>
-                        <p>
-                                <a href="#miners"><i class="fas fa-toolbox" aria-hidden="true"></i>&nbsp;<strong>Miners </strong> </a>
-                        </p>
-                        <p>
-                                <a href="#chain"><i class="fas fa-link" aria-hidden="true"></i>&nbsp;<strong>Blockchain </strong> </a>
-                        </p>
-                        <p><i class="fas fa-handshake" aria-hidden="true"></i>&nbsp; <strong>Exchanges:</strong>
-                           <!-- <a class="hot_link2" target="_blank" href=""> </a>,
-                            <a class="hot_link2" target="_blank" href=""> </a> -->
-                        </p>
+                        <p><a href="https://github.com/BitcoinNova" target="_blank"><i class="fab fa-github-square" aria-hidden="true"></i>&nbsp;<strong>Bitcoin Nova Github </strong></a></p>
+                        <p><a href="https://discord.gg/8zQf7PD" target="_blank"><i class="fab fa-discord" aria-hidden="true"></i>&nbsp;<strong> Bitcoin Nova Discord </strong> </a></p>
+                        <p><a href="https://medium.com/@bitcoinnova" target="_blank"><i class="fab fa-medium-m" aria-hidden="true"></i>&nbsp;<strong>Bitcoin Nova Medium </strong></a></p>
+                        <p><a href="https://twitter.com/bitcoinnova" target="_blank"><i class="fab fa-twitter-square" aria-hidden="true"></i>&nbsp;<strong>Bitcoin Nova Twitter</strong></a></p>
+                        <p><a href="https://www.reddit.com/user/bitcoinnova" target="_blank"><i class="fab fa-reddit-square" aria-hidden="true"></i>&nbsp;<strong>Bitcoin Nova Reddit</strong></a></p>
+                        <p><a href="https://odysee.com/@BitcoinNova:1" target="_blank"><i class="fab fa-angellist" aria-hidden="true"></i>&nbsp;<strong>Bitcoin Nova Odysee</strong></a></p>
                     </div>
                 </div>
     </div>
@@ -502,10 +483,10 @@
                         var row = document.createElement('tr');
                         var timestamp = Date().now;
                         var columns =
-                            '<td>' + getReadableCoins(amount, 4, true) + '</td>' +
-                            '<td>' + getReadableCoins(fee, 4, true) + '</td>' +
+                            '<td>' + getReadableCoins(amount, 6, true) + '</td>' +
+                            '<td>' + getReadableCoins(fee, 6, true) + '</td>' +
                             '<td>' + localizeNumber(size) + '</td>' +
-                            '<td>' + formatPaymentLink(hash) + '</td>';
+                            '<td>' + hash + '</td>';
                         row.innerHTML = columns;
                         $(txsRows).append(row);
                     }

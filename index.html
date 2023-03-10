@@ -14,7 +14,6 @@
 	<link href="css/bootstrap.css" rel="stylesheet" id="theme_link" type='text/css'>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
 	<title>Bitcoin Nova [BTN] Block Explorer - Pools,Markets,Stats,Links</title>
-
 	<script src="./js/compressed.js"></script>
 	<script src="./config.js"></script>
 	<script src="./js/main.js"></script>
@@ -42,7 +41,6 @@
 			<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fas fa-wrench" aria-hidden="true"> </i>  Tools <span class="caret"></span></a> 
 				<ul id="products-menu" class="dropdown-menu">
 					<li><a class="hot_link menu" target="_blank" href="http://paperwallet.bitcoinnova.org/"><i class="fas fa-qrcode" aria-hidden="true"></i> Paper Wallet</a></li>
-					<li><a class="hot_link menu" target="_blank" href="http://faucet.bitcoinnova.org/"><i class="fas fa-coins" aria-hidden="true"></i> Free Bitcoin Nova</a></li>
 					<li><a class="hot_link menu" data-page="api.html" href="#api"><i class="fas fa-server" aria-hidden="true"></i> Api/Node</a></li>
 					<li><a class="hot_link menu" data-page="links.html" href="#links"><i class="fas fa-question" aria-hidden="true"></i> Links</a></li>
 				</ul> 
@@ -83,116 +81,75 @@
 <script>
 $('#btn_search').click(function(e) {
 var text = document.getElementById('txt_search').value;
-function GetSearchBlockbyHeight(){
-var block, xhrGetSearchBlockbyHeight;
-	if (xhrGetSearchBlockbyHeight) xhrGetSearchBlockbyHeight.abort();
-	xhrGetSearchBlockbyHeight = $.ajax({
-	url: api + '/json_rpc',
-	method: "POST",
-	data: JSON.stringify({
-		jsonrpc:"2.0",
-		id: "blockbyheight",
-		method:"getblockheaderbyheight",
-		params: {
-			height: parseInt(text)
-		}
-	}),
-		dataType: 'json',
-		cache: 'false',
-		success: function(data){
-		if(data.result){
-		block = data.result.block_header;
-		window.location.href = getBlockchainUrl(block.hash);
-		} else if(data.error) {
-		wrongSearchAlert();
-		}
-		}
-	});
-}
-
-	function GetSearchBlock(){
-	var block, xhrGetSearchBlock;
-		if (xhrGetSearchBlock) xhrGetSearchBlock.abort();
-			xhrGetSearchBlock = $.ajax({
+	function GetSearchBlockbyHeight(){
+		$.ajax({
 				url: api + '/json_rpc',
 				method: "POST",
 				data: JSON.stringify({
 					jsonrpc:"2.0",
-					id: "GetSearchBlock",
-					method:"f_block_json",
-					params: {
-					   hash: text
-					}
+					id: "getblockheaderbyheight",
+					method:"getblockheaderbyheight",
+					params: {height: parseInt(text)}
 				}),
 				dataType: 'json',
 				cache: 'false',
 				success: function(data){
-					if(data.result){
-						block = data.result.block;
-						sessionStorage.setItem('searchBlock', JSON.stringify(block));
-						window.location.href = getBlockchainUrl(block.hash);
-					} else if(data.error) {
-						$.ajax({
-							url: api + '/json_rpc',
-							method: "POST",
-							data: JSON.stringify({
-								jsonrpc:"2.0",
-								id: "test",
-								method:"f_transaction_json",
-								params: {
-									hash: text
-								}
-							}),
-							dataType: 'json',
-							cache: 'false',
-							success: function(data){
-								  if(data.result){
-									sessionStorage.setItem('searchTransaction', JSON.stringify(data.result));
-									window.location.href = transactionExplorer.replace('{id}', text);
-								  } else if(data.error) {
-									xhrGetTsx =  $.ajax({
-										url: api + '/json_rpc',
-										method: "POST",
-										data: JSON.stringify({
-											jsonrpc:"2.0",
-											id: "test",
-											method:"k_transactions_by_payment_id",
-											params: {
-												payment_id: text
-											}
-										}),
-										dataType: 'json',
-										cache: 'false',
-										success: function(data){
-											if(data.result){
-												txsByPaymentId = data.result.transactions;
-												sessionStorage.setItem('txsByPaymentId', JSON.stringify(txsByPaymentId));
-												window.location.href = paymentIdExplorer.replace('{id}', text);
-											} else if(data.error) {
-												$('#page').after(
-													'<div class="alert alert-warning alert-dismissable fade in" style="position: fixed; right: 25%; top:65px;">'+
-														'<button type="button" class="close" ' +
-																'data-dismiss="alert" aria-hidden="true">' +
-															'&times;' +
-														'</button>' +
-														'We could not find anything.' +
-													 '</div>');
-											}
-										}
-									});
-
-								  }
-							}
-						});
-					}
+				if(data.result){
+					block = data.result.block_header;
+					window.location.href = getBlockchainUrl(block.hash);
+				} else if(data.error) {
+					wrongSearchAlert();
+				}
 				}
 			});
 	}
 
+	function GetSearchBlockExplorerHash(){
+		$.ajax({
+				url: api + '/json_rpc',
+				method: "POST",
+				data: JSON.stringify({
+					jsonrpc:"2.0",
+					id: "GetSearchBlockExplorerHash",
+					method:"f_block_json",
+					params: {hash: text}
+				}),
+				dataType: 'json',
+				cache: 'false',
+			success: function(data){
+				if(data.result){
+					block = data.result.block;
+					sessionStorage.setItem('searchBlock', JSON.stringify(block));
+					window.location.href = getBlockchainUrl(block.hash);
+					}	
+				},
+			error: function( ) {
+					$.ajax({
+					url: api + '/json_rpc',
+					method: "POST",
+					data: JSON.stringify({
+						jsonrpc:"2.0",
+						id: "GetSearchBlockExplorerHash",
+						method:"f_transaction_json",
+						params: {hash: text}
+					}),
+					dataType: 'json',
+					cache: 'false',
+					success: function(data){
+							if(data.result){
+								sessionStorage.setItem('searchTransaction', JSON.stringify(data.result));
+								window.location.href = transactionExplorer.replace('{id}', text);
+							}	  
+					}	  				
+					});
+		}
+		});	
+	}
+
 	if ( text.length < 64 ) {
-		GetSearchBlockbyHeight();
+	GetSearchBlockbyHeight();
 	} else if ( text.length == 64 ) {
-		GetSearchBlock();
+		GetSearchBlockExplorerHash();
 	} else {
 		wrongSearchAlert();
 	}
@@ -239,7 +196,7 @@ Donations welcome:<br/>
 <div class="col-lg-3 col-md-3 col-sm-3 text-center">
 	<p>
 		<small>
-		&copy; 2018 <strong>Bitcoin Nova</strong>
+		&copy; 2023 <strong>Bitcoin Nova</strong>
 		</small>
 	</p>
 </div>

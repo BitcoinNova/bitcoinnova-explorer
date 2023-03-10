@@ -27,19 +27,24 @@
       <h3>Choose an operating system</h3>
           <button class="btn btn-default" onclick="js:show_apple();" type="button" value="apple">Apple</button>
           <button class="btn btn-default" onclick="js:show_win();" type="button" value="win">Windows</button>
-          <button class="btn btn-default" onclick="js:show_linux();" type="button" value="linux">Linux</button><br /><br />
+          <button class="btn btn-default" onclick="js:show_linux();" type="button" value="linux">Linux</button>
+          <button class="btn btn-default" onclick="js:show_android();" type="button" value="android">Android</button>
+          <br /><br/>
 <!-- OS -->
       <div id="apple" style="display:none;">
-	  <button class="btn btn-default" onclick="js:show_applegui();" type="button" value="Generate wallet">GUI</button>
-	  <button class="btn btn-default" onclick="js:show_applecli();" type="button" value="Generate wallet">CLI</button>
+	      <button class="btn btn-default" onclick="js:show_applegui();" type="button" value="Generate wallet">GUI</button>
+	      <button class="btn btn-default" onclick="js:show_applecli();" type="button" value="Generate wallet">CLI</button>
       </div>
        <div id="win" style="display:none;">
-	  <button class="btn btn-default" onclick="js:show_wingui();" type="button" value="Generate wallet">GUI</button>
-	  <button class="btn btn-default" onclick="js:show_wincli();" type="button" value="Generate wallet">CLI</button>
+	      <button class="btn btn-default" onclick="js:show_wingui();" type="button" value="Generate wallet">GUI</button>
+	      <button class="btn btn-default" onclick="js:show_wincli();" type="button" value="Generate wallet">CLI</button>
       </div>
       <div id="linux" style="display:none;">
-	  <button class="btn btn-default" onclick="js:show_linuxgui();" type="button" value="Generate wallet">GUI</button>
-	  <button class="btn btn-default" onclick="js:show_linuxcli();" type="button" value="Generate wallet">CLI</button>
+	      <button class="btn btn-default" onclick="js:show_linuxgui();" type="button" value="Generate wallet">GUI</button>
+	      <button class="btn btn-default" onclick="js:show_linuxcli();" type="button" value="Generate wallet">CLI</button>
+      </div>
+      <div id="android" style="display:none;">
+        <button class="btn btn-default" onclick="js:show_androidgui();" type="button" value="Generate wallet">GUI</button>
       </div>
 <!-- GUi/CLI -->
       </div>
@@ -50,18 +55,21 @@
         <!-- -->
         <div class="col-sm-5 col-md-5 col-lg-5"></div>
           <div class="col-sm-2 col-md-2 col-lg-2">
-            <img src="https://i.imgur.com/fsWTCIA.png" style="width: 100%;height: auto;"> <br><br>
+            <img src="img/bitcoinnova_symbol_color.png" style="width: 100%;height: auto;"> <br><br>
           </div>
         <div class="col-sm-5 col-md-5 col-lg-5"></div>
         <!-- -->
           <div class="col-sm-12 col-md-12 col-lg-12">
-          <p>Unzip it and move the folder wherever you want or drag the application <strong>BitcoinNova-Nest</strong> into /Applications or any other folder.</p>
-          <p>Launch the application. (If your mac complains that the app comes from an unindentified developer and does not want to open it, just right-click (or ctrl-click) on the app, and choose open > open)</p> <br>
-          <p>The wallets you create or generate will be saved to your home folder. You can keep them there or move them wherever you want.</p>
-          <p>Make sure Bitcoinnova-service or Bitcoinnovad are not running before you start BitcoinNova-Nest.</p>
-          <p>If you encounter crashes, open the activity monitor (in your app > utilities), and force quit walletd (if it is running) before opening a wallet. (this bug is being worked on).</p>
-          <p>The log files will be saved in ~/Library/Application Support/BitcoinNova-Nest/.</p><br><br>
-          <button class="btn btn-default" onclick="window.open('https://github.com/BitcoinNova/BitcoinNova-Nest/releases','_blank')" type="button" value="Generate wallet">Download</button>
+          <p>Double click the .dmg file, and the installer prompt will appear. Simply drag the <strong>BitcoinNova Sonic Wallet</strong> icon on the left into the "Applications" directory on the right in order to install it.</p>
+          <p><strong>Important: Try to run the program at this point.</strong> (You can do so by clicking on the icon in the dock.) Unfortunately, you'll get a nasty error message from MacOS, which we'll take care of in the next step.</p>
+          <p>In order to run the program, navigate to <strong>System Preferences</strong>, and click <strong>Security & Privacy</strong>. You'll see a message near the bottom that BitcoinNova Sonic Wallet was blocked because it is not from an identified developer, with a button next to it that says <strong>Open Anyway</strong>. Click that button.</p>
+          <p>After this, you can run the program as normal by double clicking on the icon on the dock. (Unfortunately, you will have to do this every time the application updates as well)</p><br />
+          <p><strong>Why do we have to do this anyway? Is it safe?</strong></p>
+          <p>I assure you that this wallet is perfectly safe to use. The code is all published open source under the MIT license and <a target="_blank" href="https://github.com/BitcoinNova/bitcoinnova-sonic-wallet">visible for anyone to examine.</a></p>
+          <p>MacOS is a proprietary operating system and they restrict what programs can run on their OS to only developers with a valid Apple Developer key. Unless the program is signed with a valid Apple Developer key, you will have to override it like this in order to run it. </p>
+          <a class="hot_link2" target="_blank" href="https://docs.bitcoinnova.org/guides/wallets/Using-remote-nodes"> More info about remote nodes here.</a> <br>
+          <a class="hot_link2" target="_blank" href="https://docs.bitcoinnova.org/guides/wallets/Using-bitcoinnova-sonic-wallet"> More info about BitcoinNova Sonic Wallet you can find here!</a><br><br>
+          <button class="btn btn-default" onclick="window.open('https://github.com/BitcoinNova/bitcoinnova-sonic-wallet/releases','_blank')" type="button" value="Generate wallet">Download</button>
           <br /><br /><br />
           <strong>Screen:</strong> <br><br>
           <img src="img/MainScreen.png" style="width: 100%;height: auto;"> <br />
@@ -77,20 +85,21 @@
         <!-- -->
         <div class="col-sm-5 col-md-5 col-lg-5"></div>
           <div class="col-sm-2 col-md-2 col-lg-2">
-            <img src="https://i.imgur.com/fsWTCIA.png" style="width: 100%;height: auto;"> <br><br>
+            <img src="img/bitcoinnova_symbol_color.png" style="width: 100%;height: auto;"> <br><br>
           </div>
         <div class="col-sm-5 col-md-5 col-lg-5"></div>
         <!-- -->
           <div class="col-sm-12 col-md-12 col-lg-12">
-          <p>Run the Bitcoinnovad binary extracted from the Mac binary tarball: <strong>./Bitcoinnovad</strong></p>
-          <p>With Bitcoinnovad still running in the background or another terminal/shell/command prompt, open zedwallet in a new shell: <strong>./zedwallet</strong></p>
+          <p>Extract <strong>tar -xvzf BitcoinNova-vx.xx.x-osx.tar.gz</strong></p> 
+          <p>Run the bitcoinnovad binary extracted: <strong> ./bitcoinnovad</strong></p>
+          <p>With bitcoinnovad still running in the background or another terminal/shell/command prompt, open bitcoinnova-wallet in a new shell: <strong>./bitcoinnova-wallet</strong></p>
           <p>In case you don't want to download the blockchain and verify it everytime, you can instead use a Remote Node to quickly sync the blockchain. </p>
-          <a class="hot_link2" target="_blank" href="https://github.com/BitcoinNova/bitcoinnova/wiki/Using-remote-nodes"> More info about remote nodes here.</a> <br>
-          <a class="hot_link2" target="_blank" href="https://github.com/BitcoinNova/bitcoinnova/wiki/Using-zedwallet"> More info about zedwallet you can find here!</a><br><br>
+          <a class="hot_link2" target="_blank" href="https://docs.bitcoinnova.org/guides/wallets/Using-remote-nodes"> More info about remote nodes here.</a> <br>
+          <a class="hot_link2" target="_blank" href="https://docs.bitcoinnova.org/guides/wallets/Using-bitcoinnova-wallet"> More info about bitcoinnova-wallet you can find here!</a><br><br>
           <button class="btn btn-default" onclick="window.open('https://github.com/BitcoinNova/bitcoinnova/releases','_blank')" type="button" value="Generate wallet">Download</button>
           <br /><br /><br />
           <strong>Screen:</strong> <br><br>
-          <img src="img/zw.png" style="width: 100%;height: auto;"> <br />
+          <img src="img/bitcoinnova-wallet.png" style="width: 100%;height: auto;"> <br />
           </div>
         <!-- -->
           </div>
@@ -103,16 +112,17 @@
         <!-- -->
         <div class="col-sm-5 col-md-5 col-lg-5"></div>
           <div class="col-sm-2 col-md-2 col-lg-2">
-            <img src="https://i.imgur.com/fsWTCIA.png" style="width: 100%;height: auto;"> <br><br>
+            <img src="img/bitcoinnova_symbol_color.png" style="width: 100%;height: auto;"> <br><br>
           </div>
         <div class="col-sm-5 col-md-5 col-lg-5"></div>
         <!-- -->
           <div class="col-sm-12 col-md-12 col-lg-12">
-          <p>Unzip the folder and launch <strong>BitcoinNova-Nest.exe</strong> (Make sure you leave everything as is in the folder)</p> <br>
-          <p>Make sure Bitcoinnova-service.exe or Bitcoinnovad.exe are not running before you start BitcoinNova-Nest</p>
-          <p>When you open a wallet in BitcoinNova Nest, you will see a black empty walletd window. You must keep it open. It will close automatically when you close your wallet.If it does not close automatically a few seconds after you close your wallet, you can close it manually.</p> <br><br>
-          <button class="btn btn-default" onclick="window.open('https://github.com/BitcoinNova/BitcoinNova-Nest/releases','_blank')" type="button" value="Generate wallet">Download</button>
-          <br /><br /><br />
+          <p>Unzip the folder and run the installation wizard <strong>Bitcoin Nova Sonic Wallet.exe</strong></p>
+          <p>Once the installation process is complete, to open the wallet, click on the <strong>BitcoinNova Sonic Wallet</strong> shortcut generated on your desktop.</p>
+          <a class="hot_link2" target="_blank" href="https://docs.bitcoinnova.org/guides/wallets/Using-remote-nodes"> More info about remote nodes here.</a> <br>
+          <a class="hot_link2" target="_blank" href="https://docs.bitcoinnova.org/guides/wallets/Using-bitcoinnova-sonic-wallet"> More info about BitcoinNova Sonic Wallet you can find here!</a><br><br>
+          <button class="btn btn-default" onclick="window.open('https://github.com/BitcoinNova/bitcoinnova-sonic-wallet/releases','_blank')" type="button" value="Generate wallet">Download</button>
+          <br /><br />
           <strong>Screen:</strong> <br><br>
           <img src="img/MainScreen.png" style="width: 100%;height: auto;"> <br />
           </div>
@@ -127,20 +137,21 @@
         <!-- -->
         <div class="col-sm-5 col-md-5 col-lg-5"></div>
           <div class="col-sm-2 col-md-2 col-lg-2">
-            <img src="https://i.imgur.com/fsWTCIA.png" style="width: 100%;height: auto;"> <br><br>
+            <img src="img/bitcoinnova_symbol_color.png" style="width: 100%;height: auto;"> <br><br>
           </div>
         <div class="col-sm-5 col-md-5 col-lg-5"></div>
         <!-- -->
           <div class="col-sm-12 col-md-12 col-lg-12">
-          <p>Run the Bitcoinnovad.exe executable extracted from the Windows binary zip: <strong>cd Downloads\bitcoinnova-windows</strong> than <strong>Run the zedwallet.exe executable from the extracted folder.</strong></p>
-          <p>With Bitcoinnovad still running in the background or another terminal/shell/command prompt, open zedwallet in a new shell: <strong>./zedwallet</strong></p>
+          <p>Extract <strong>BitcoinNova-vx.xx.x-windows.zip</strong</p>  
+          <p>Run the <strong>bitcoinnovad.exe</strong></p> 
+          <p>With bitcoinnovad still running in the background or another terminal/shell/command prompt, open bitcoinnova-wallet in a new shell: <strong>bitcoinnova-wallet.exe</strong></p>
           <p>In case you don't want to download the blockchain and verify it everytime, you can instead use a Remote Node to quickly sync the blockchain. </p>
-          <a class="hot_link2" target="_blank" href="https://github.com/BitcoinNova/bitcoinnova/wiki/Using-remote-nodes"> More info about remote nodes here.</a> <br>
-          <a class="hot_link2" target="_blank" href="https://github.com/BitcoinNova/bitcoinnova/wiki/Using-zedwallet"> More info about zedwallet you can find here!</a><br><br>
+          <a class="hot_link2" target="_blank" href="https://docs.bitcoinnova.org/guides/wallets/Using-remote-nodes"> More info about remote nodes here.</a> <br>
+          <a class="hot_link2" target="_blank" href="https://docs.bitcoinnova.org/guides/wallets/Using-bitcoinnova-wallet"> More info about bitcoinnova-wallet you can find here!</a><br><br>
           <button class="btn btn-default" onclick="window.open('https://github.com/BitcoinNova/bitcoinnova/releases','_blank')" type="button" value="Generate wallet">Download</button>
           <br /><br /><br />
           <strong>Screen:</strong> <br><br>
-          <img src="img/zw.png" style="width: 100%;height: auto;"> <br />
+          <img src="img/bitcoinnova-wallet.png" style="width: 100%;height: auto;"> <br />
           </div>
         <!-- -->
         </div>
@@ -153,20 +164,31 @@
         <!-- -->
         <div class="col-sm-5 col-md-5 col-lg-5"></div>
           <div class="col-sm-2 col-md-2 col-lg-2">
-            <img src="https://i.imgur.com/fsWTCIA.png" style="width: 100%;height: auto;"> <br><br>
+            <img src="img/bitcoinnova_symbol_color.png" style="width: 100%;height: auto;"> <br><br>
           </div>
         <div class="col-sm-5 col-md-5 col-lg-5"></div>
         <!-- -->
           <div class="col-sm-12 col-md-12 col-lg-12">
-            <p>extract it <strong>$ tar xvzf BitcoinNova-Nest-x.xx-Linux.tar.gz</strong></p>
-            <p>run BitcoinNova-Nest.sh. (Make sure you leave everything as is in the folder)</p><br>
-            <p>Make sure Bitcoinnova-service or Bitcoinnovad are not running before you start BitcoinNova-Nest</p>
-            <p>If you want the copy address to clipboard button to work, install xclip or xsel on Debian/Ubuntu:<strong>$ sudo apt install xclip</strong></p>
-            <p>If you encounter crashes, open an activity monitor (e.g. $ htop), and quit walletd (if it is running) before opening a wallet. (this bug is being worked on)</p> <br><br>
-          <button class="btn btn-default" onclick="window.open('https://github.com/BitcoinNova/BitcoinNova-Nest/releases','_blank')" type="button" value="Generate wallet">Download</button>
-          <br /><br /><br />
-          <strong>Screen:</strong> <br><br>
-          <img src="img/MainScreen.png" style="width: 100%;height: auto;"> <br />
+              <p>After downloading the AppImage file, you'll need to mark it as an executable so that your system can run it. You can do it in either of these two methods:</p>
+              <p>Using the GUI:</p>
+
+                  <li>Right click the file</li>
+                  <li>Click on <code>Properties</code>.</li>
+                  <li>Click on <code>Permissions</code>.</li>
+                  <li>Tick the box next to <code>Allow executing file as program</code>.</li>
+              <br />
+              <p>Using the Command Line:</p>
+
+                  <li>Open a terminal in the directory the appimage file is stored in.</li>
+                  <li>Input this command: <code>chmod +x Bitcoin.Nova.Sonic.Wallet-*.AppImage</code> (this will allow file to run as a program, which is required).</li>
+              <br />
+              <p>After completing one of the two above steps, you can launch the wallet simply by double clicking the AppImage file. I recommend moving the AppImage file into a dedicated folder inside your home directory for AppImages. A good location would be <code>/home/your_username/Apps</code></p>
+              <a class="hot_link2" target="_blank" href="https://docs.bitcoinnova.org/guides/wallets/Using-remote-nodes"> More info about remote nodes here.</a> <br>
+              <a class="hot_link2" target="_blank" href="https://docs.bitcoinnova.org/guides/wallets/Using-bitcoinnova-sonic-wallet"> More info about BitcoinNova Sonic Wallet you can find here!</a><br><br>
+              <button class="btn btn-default" onclick="window.open('https://github.com/BitcoinNova/bitcoinnova-sonic-wallet/releases','_blank')" type="button" value="Generate wallet">Download</button>
+              <br /><br /><br />
+              <strong>Screen:</strong> <br><br>
+              <img src="img/MainScreen.png" style="width: 100%;height: auto;"> <br />
           </div>
         <!-- -->
         </div>
@@ -179,21 +201,22 @@
         <!-- -->
         <div class="col-sm-5 col-md-5 col-lg-5"></div>
           <div class="col-sm-2 col-md-2 col-lg-2">
-            <img src="https://i.imgur.com/fsWTCIA.png" style="width: 100%;height: auto;"> <br><br>
+            <img src="img/bitcoinnova_symbol_color.png" style="width: 100%;height: auto;"> <br><br>
           </div>
         <div class="col-sm-5 col-md-5 col-lg-5"></div>
         <!-- -->
           <div class="col-sm-12 col-md-12 col-lg-12">
-          <p>Run the Bitcoinnovad binary extracted from the Linux binary tarball: <strong>./Bitcoinnovad</strong></p>
-          <p>With Bitcoinnovad still running in the background or another terminal/shell/command prompt, open zedwallet in a new shell: <strong>./zedwallet</strong></p>
+          <p>Extract <strong>tar -xvzf BitcoinNova-vx.xx.x-linux.tar.gz</strong></p>  
+          <p>Run the bitcoinnovad binary extracted: <strong>./bitcoinnovad</strong></p>
+          <p>With bitcoinnovad still running in the background or another terminal/shell/command prompt, open bitcoinnova-wallet in a new shell: <strong>./bitcoinnova-wallet</strong></p><br />
           <p><strong>Using a Remote Node</strong></p>
           <p>In case you don't want to download the blockchain and verify it everytime, you can instead use a Remote Node to quickly sync the blockchain. </p>
-          <a class="hot_link2" target="_blank" href="https://github.com/BitcoinNova/bitcoinnova/wiki/Using-remote-nodes"> More info about remote nodes here.</a><br>
-          <a class="hot_link2" target="_blank" href="https://github.com/BitcoinNova/bitcoinnova/wiki/Using-zedwallet"> More info about zedwallet you can find here!</a><br><br>
+          <a class="hot_link2" target="_blank" href="https://docs.bitcoinnova.org/guides/wallets/Using-remote-nodes"> More info about remote nodes here.</a><br>
+          <a class="hot_link2" target="_blank" href="https://docs.bitcoinnova.org/guides/wallets/Using-bitcoinnova-wallet"> More info about bitcoinnova-wallet you can find here!</a><br><br>
           <button class="btn btn-default" onclick="window.open('https://github.com/BitcoinNova/bitcoinnova/releases','_blank')" type="button" value="Generate wallet">Download</button>
           <br /><br /><br />
           <strong>Screen:</strong> <br><br>
-          <img src="img/zw.png" style="width: 100%;height: auto;"> <br />
+          <img src="img/bitcoinnova-wallet.png" style="width: 100%;height: auto;"> <br />
           </div>
         </div>
       </div>

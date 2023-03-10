@@ -30,52 +30,6 @@
 
     <div class="row">
         <div class="col-sm-12 col-md-12 col-lg-12">
-            <h3>Cast XMR</h3>
-            <h4>is specially optimized for the Radeon RX Vega series of GPUs, reaching hash rates of more then 2000 CryptoNight Hashes/s on an single RX Vega 56 or Vega 64 GPU.</h4>
-            <button class="btn btn-default" onclick="castconf()" type="button" value="castxmr">Configuration</button>
-            <button class="btn btn-default" onclick="window.open('https://github.com/glph3k/cast_xmr/releases/','_blank')" type="button" value="Download">Download</button>
-        </div>
-        <div id="castconfdiv" class="col-sm-12 col-md-12 col-lg-12 d-print-none" style="display:none;">
-          <br>
-            <p>cast_xmr has a command line interface. For a minimal configuration run:</p>
-            <p><code>
-            cast_xmr -S [pool server] -u [username or wallet address] --algo=[n]
-            </code></p>
-            <p>The <code>--algo</code> option specifies which CryptoNight variant to use:</p>
-            <ul>
-            <li><code>--algo=0</code> for CryptoNight (Classic)</li>
-            <li><code>--algo=1</code> for CryptoNightV7</li>
-            <li><code>--algo=2</code> for CryptoNight-Heavy</li>
-            <li><code>--algo=3</code> for CryptoNight-Lite</li>
-            <li><code>--algo=4</code> for CryptoNightV7-Lite</li>
-            <li><code>--algo=5</code> for CryptoNightIPBC-Lite</li>
-            <li><code>--algo=6</code> for CryptoNightXTL</li>
-            <li><code>--algo=7</code> for CryptoNightXHV-Heavy</li>
-            </ul>
-            <p>If algo is not specified the correct one for mining Monero will be selected.</p>
-            <p>To select which GPU to use the <code>-G</code> switch, e.g. for using the 2nd card use:</p>
-            <p><code>
-            cast_xmr -S [pool server] -u [username or wallet address] -G 1
-            </code></p>
-            <p>To select multiple GPU to use the <code>-G</code> switch and list comma separated the GPUs which should be used, e.g. for using the 1st and 3rd card use:</p>
-            <p><code>
-            cast_xmr -S [pool server] -u [username or wallet address] -G 0,2
-            </code></p>
-            <p>In case you have multiple OpenCL implementation installed or mixed GPUs (Nvidia, Intel, AMD), the correct OpenCL implemenation can be selected with the “–opencl” switch:</p>
-            <p><code>
-            cast_xmr -S [pool server] -u [username or wallet address] --opencl 1 -G 0
-            </code></p>
-            <p>For a complete list of configuration options run:</p>
-            <p><code>
-            cast_xmr --help
-            </code></p>
-        </div>
-    </div>
-
-    <br>
-
-    <div class="row">
-        <div class="col-sm-12 col-md-12 col-lg-12">
             <h3>XMR-Stak</h3>
             <h4>is a universal Stratum pool miner. This miner supports CPUs, AMD and NVIDIA gpus and can be used to mine the crypto currency Monero and Aeon.</h4>
             <button class="btn btn-default" onclick="xmrconf()" type="button" value="xmr">Configuration</button>
@@ -134,40 +88,6 @@
             -h, --help                   display this help and exit
             -v, --version                output version information and exit
           </code></pre>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-sm-12 col-md-12 col-lg-12">
-            <h3>Xrig</h3>
-            <h4>is a high performance cryptonight miner for AMD cards. Designed for large-scale use of RX Vega.</h4>
-            <button class="btn btn-default" onclick="xrigconf()" type="button" value="xrig">Configuration</button>
-            <button class="btn btn-default" onclick="window.open('https://github.com/arnesson/xrig/releases','_blank')" type="button" value="Download">Download</button>
-        </div>
-        <div id="xrigconfdiv" class="col-sm-12 col-md-12 col-lg-12 d-print-none" style="display:none;">
-          <br>
-            <h3>Command line options</h3>
-            <pre><code>  
-            -a, --algo=ALGO                cryptonight (default) or cryptonight-lite
-            -o, --url=URL                  URL of mining server
-            -u, --user=USERNAME            username for mining server
-            -p, --pass=PASSWORD            password for mining server
-                --variant=NUMBER           PoW variant (defaults to -1 = automatic)
-            -k, --keepalive                send keepalive to prevent timeout (needs pool support)
-                --intensity=NUMBER         thread intensity
-                --platform-index=NUMBER    OpenCL platform index
-                --colors                   enable colored output
-            -b, --background               run the miner in the background
-            -c, --config=FILE              load a JSON-format configuration file
-            -l, --log=FILE                 log all output to a file
-                --nicehash                 enable nicehash support
-                --port=NUMBER              port for the miner API
-                --token=T                  access token for API
-                --id=ID                    miner id (defaults to machine name)
-            -h, --help                     display this help and exit
-            -v, --version                  output version information and exit
-            </code></pre>
-
         </div>
     </div>
 

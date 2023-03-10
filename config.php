@@ -1,6 +1,6 @@
 <?php
 return array(
-        'api' => 'http://explorer.bitcoinnova.org:5454', // API_json_RPC
+        'api' => 'http://81.169.166.154:45225', // API_json_RPC
         'blockTargetInterval' => 120,
         'coinUnits' => 1000000
 );
