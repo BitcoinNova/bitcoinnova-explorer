@@ -6,15 +6,12 @@ var symbol = 'BTN';
 var refreshDelay = 10000;
 var networkStat = {
     "btn": [
-    	["pool.bitcoinnova.org", "http://pool.bitcoinnova.org:8130"],
-        ["superblockchain.con-ip.com/btn", "http://superblockchain.con-ip.com:8133"],
-        ["webbtn.semipool.com", "https://webbtn.semipool.com/api"]
+        ["superblockchain.con-ip.com/btn", "https://superblockchain.con-ip.com:14022"]
     ]
 };
 var networkStat2 = {
     "btn": [
-    	["pool.bitcoinnova.org", "http://pool.bitcoinnova.org:8130"],
-        ["superblockchain.con-ip.com/btn", "http://superblockchain.con-ip.com:8133"],
-        ["webbtn.semipool.com", "https://webbtn.semipool.com/api"]
+        ["superblockchain.con-ip.com/btn", "https://superblockchain.con-ip.com:14022"]
+
     ]
 };
