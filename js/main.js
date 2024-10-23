@@ -256,3 +256,8 @@ function hex2a(hexx) {
         str += String.fromCharCode(parseInt(hex.substr(i, 2), 16));
     return str;
 }
+
+const getCurrentYear = ()=>{
+    return new Date().getFullYear();
+}
+document.getElementById('current-year').textContent = getCurrentYear()
