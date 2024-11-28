@@ -257,7 +257,7 @@ function hex2a(hexx) {
     return str;
 }
 
-const getCurrentYear = ()=>{
-    return new Date().getFullYear();
-}
-document.getElementById('current-year').textContent = getCurrentYear()
+document.addEventListener('DOMContentLoaded', () => {
+    const getCurrentYear = () => new Date().getFullYear();
+    document.getElementById('current-year').textContent = getCurrentYear();
+});
